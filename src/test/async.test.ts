@@ -1,6 +1,6 @@
 import { nextTick } from 'vue'
 import { flushPromises, mount } from '@vue/test-utils'
-import AsyncWrapper from '../components/AsyncWrapper.vue'
+import AsyncWrapper from '../test-components/AsyncWrapper.vue'
 
 test('async component with suspense', async () => {
   expect(AsyncWrapper).toBeTruthy()
