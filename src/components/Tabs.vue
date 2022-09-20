@@ -13,18 +13,15 @@
       </li>
     </ul> -->
 
-    <ul class="flex tab-bar-wrap">
-      <li class="flex-auto tab-bar-title">
-        <span>联通</span>
-        <img src="@/assets/img/tablogo1.png" alt="联通" style="width:100%"/>
-      </li>
-      <li class="flex-auto tab-bar-title">
-        <span>电信</span>
-        <img src="@/assets/img/tablogo2.png" alt="电信" style="width:100%"/>
-      </li>
-      <li class="flex-auto tab-bar-title">
-        <span>移动</span>
-        <img src="@/assets/img/tablogo3.png" alt="移动" style="width:100%"/>
+    <ul class="flex tab-bar-wrap align-end">
+      <li
+        class="flex flex-center tab-bar"
+        v-for="(item, key) in tabList"
+        :class="{ active: activeTab === key }"
+        @click="changeTab(key)"
+      >
+        <span class="tab-bar-title">{{ item.title }}</span>
+        <img v-lazy="item.logo" :alt="item.title" class="tab-bar-logo" />
       </li>
     </ul>
     <!-- <template v-for="(tabItem, key) in item.list">
@@ -39,8 +36,28 @@
 </template>
 
 <script setup lang="ts">
-// import { ref } from "vue";
+import tablogo1 from "@/assets/img/tablogo1.png";
+import tablogo2 from "@/assets/img/tablogo2.png";
+import tablogo3 from "@/assets/img/tablogo3.png";
 // defineProps<{ msg: string }>();
 
-// const tabTitles = ref();
+let tabList = $ref([
+  {
+    title: "联通",
+    logo: tablogo1,
+  },
+  {
+    title: "电信",
+    logo: tablogo2,
+  },
+  {
+    title: "移动",
+    logo: tablogo3,
+  },
+]);
+
+let activeTab = $ref(0);
+function changeTab(i: number) {
+  activeTab = i;
+}
 </script>

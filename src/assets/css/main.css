@@ -1,0 +1,36 @@
+.wrapper {
+  background-color: #af0206;
+  min-height: 100vh;
+}
+
+.tab-bar {
+  width: 33.3333%;
+  text-align: center;
+  background-color: #6c0e0e;
+  color: #fe8585;
+  border-radius: 15px 15px 0 0;
+  margin: 2px;
+  height: 36px;
+}
+
+.tab-bar.active {
+  height: 50px;
+  background-color: #af0206;
+  border-top: 1px solid #f9cd90;
+  border-left: 1px solid #cc593f;
+  border-right: 1px solid #cc593f;
+}
+
+.tab-bar.active .tab-bar-title {
+  display: none;
+}
+
+.tab-bar-logo {
+  width: 60%;
+  height: 45px;
+  display: none;
+}
+
+.tab-bar.active .tab-bar-logo {
+  display: inline-block;
+}

@@ -7,12 +7,15 @@ import { VantResolver } from 'unplugin-vue-components/resolvers';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   server: {
     host: true,
     port: 5100
   },
   plugins: [
-    vue(),
+    vue({
+      reactivityTransform: true
+    }),
     Components({
       resolvers: [VantResolver()],
     }),
@@ -25,5 +28,8 @@ export default defineConfig({
     alias: {
       '@': '/src'
     }
-  }
+  },
+  build: {
+    target: "es2015",
+  },
 })

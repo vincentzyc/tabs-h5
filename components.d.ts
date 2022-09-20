@@ -7,10 +7,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AsAsync: typeof import('./src/components/AsAsync.vue')['default']
-    AsyncComp: typeof import('./src/components/AsyncComp.vue')['default']
-    AsyncWrapper: typeof import('./src/components/AsyncWrapper.vue')['default']
-    Hello: typeof import('./src/components/Hello.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Tabs: typeof import('./src/components/Tabs.vue')['default']
     VanButton: typeof import('vant/es')['Button']
