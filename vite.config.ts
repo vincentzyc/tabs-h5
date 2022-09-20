@@ -7,6 +7,10 @@ import { VantResolver } from 'unplugin-vue-components/resolvers';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    host: true,
+    port: 5100
+  },
   plugins: [
     vue(),
     Components({
@@ -17,4 +21,9 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
   },
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
+  }
 })
