@@ -2,13 +2,15 @@
 @charset "utf-8";
 
 :root {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, ol, ul, li, footer, header, menu, nav, audio, video, input {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 14px;
-  line-height: 1.2;
-  font-weight: 400;
   font-synthesis: none;
   vertical-align: baseline;
   text-rendering: optimizeLegibility;

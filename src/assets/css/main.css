@@ -83,6 +83,48 @@
 .center-popup .popup-wrap {
   padding: 10px;
   white-space: break-spaces;
-  line-height: 1.4;
+  line-height: 1.6;
   background-color: #fff;
+}
+
+.agreement-text {
+  font-size: 12px;
+  color: #cccccc;
+  line-height: 1.6;
+  font-weight: bold;
+}
+
+.agreement-title {
+  color: #666666
+}
+
+.agreement-popup {
+  height: 86vh;
+  width: 90%;
+  border-radius: 10px;
+  padding-bottom: 41px;
+}
+
+.agreement-popup .agreement-wrap {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.agreement-popup .agreement-text {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.agreement-popup .agreement-confirm {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 14px;
+  color: #1989fa;
+  border-top: 1px solid #eee;
+  text-align: center;
+  line-height: 40px;
 }
