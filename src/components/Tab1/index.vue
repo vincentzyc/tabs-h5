@@ -1,5 +1,8 @@
 <template>
-  <div>{{ expensesText }}</div>
+  <div>联通</div>
+  <img src="@/assets/img/tab1-2.jpg" alt="产品说明" class="widthfull" />
+  <img src="@/assets/img/tab1-3.jpg" alt="产品说明" class="widthfull" />
+  <img src="@/assets/img/tab1-4.png" alt="产品说明" class="widthfull" />
   <div class="text-center expenses-wrap">
     <span class="expenses-text" @click="showExpenses()">资费详情说明</span>
   </div>
