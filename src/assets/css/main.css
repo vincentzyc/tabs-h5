@@ -20,8 +20,8 @@
   color: #fe8585;
   border-radius: 15px 15px 0 0;
   margin: 2px;
-  height: 36px;
-  padding-bottom: 5px;
+  height: 30px;
+  padding: 5px;
 }
 
 .tab-bar.active {
@@ -50,7 +50,7 @@
 
 .tab-bar-logo {
   width: 60%;
-  height: 40px;
+  height: 36px;
   display: none;
 }
 
@@ -72,4 +72,17 @@
   border: 1px solid #ffeab5;
   color: #ffeab5;
   border-radius: 20px;
+}
+
+.center-popup {
+  width: 90%;
+  max-width: 576px;
+  max-height: 86vh;
+}
+
+.center-popup .popup-wrap {
+  padding: 10px;
+  white-space: break-spaces;
+  line-height: 1.4;
+  background-color: #fff;
 }

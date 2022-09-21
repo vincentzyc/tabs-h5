@@ -11,14 +11,15 @@
         <img v-lazy="item.logo" :alt="item.title" class="tab-bar-logo" />
       </li>
     </ul>
-    <template v-for="(item, key) in tabList">
-      <div v-if="item.loaded" v-show="key === activeTab" class="tab-content">
-        <div>{{ item.title }}</div>
-        <div class="text-center expenses-wrap">
-          <span class="expenses-text">资费详情说明</span>
-        </div>
-      </div>
-    </template>
+    <div v-if="tabList[0].loaded" v-show="activeTab === 0" class="tab-content">
+      <Tab1 />
+    </div>
+    <div v-if="tabList[1].loaded" v-show="activeTab === 1" class="tab-content">
+      <Tab2 />
+    </div>
+    <div v-if="tabList[2].loaded" v-show="activeTab === 2" class="tab-content">
+      <Tab3 />
+    </div>
   </div>
 </template>
 
@@ -47,6 +48,7 @@ let tabList = $ref([
 ]);
 
 let activeTab = $ref(0);
+
 function changeTab(i: number) {
   const tabItem = tabList[i];
   tabItem.loaded = true;
