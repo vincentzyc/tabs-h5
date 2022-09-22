@@ -23,6 +23,9 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    deps: {
+      inline: ['vant']
+    },
   },
   resolve: {
     alias: {
