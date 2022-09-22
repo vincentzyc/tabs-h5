@@ -4,7 +4,7 @@
       <span>{{ title }}</span>
       <span v-for="(agr, key) in agrList">
         <span v-if="key > 0">和</span>
-        <span class="agreement-title" @click.stop="openAgreement(agr.title, agr.text)">{{ agr.title }}</span>
+        <span class="agreement-title" @click="openAgreement(agr.title, agr.text)">{{ agr.title }}</span>
       </span>
     </p>
   </van-checkbox>
