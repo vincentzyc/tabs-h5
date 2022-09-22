@@ -9,14 +9,19 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Agreement: typeof import('./src/components/Agreement/index.vue')['default']
     AgreementPopup: typeof import('./src/components/AgreementPopup/index.vue')['default']
+    BelongCity: typeof import('./src/components/SelectNumber/BelongCity/index.vue')['default']
+    CityPicker: typeof import('./src/components/CityPicker/index.vue')['default']
+    copy: typeof import('./src/components/SelectNumber/index copy.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    'Index copy': typeof import('./src/components/SelectNumber/index copy.vue')['default']
+    SearchNumber: typeof import('./src/components/SelectNumber/SearchNumber/index.vue')['default']
+    SelectNumber: typeof import('./src/components/SelectNumber/index.vue')['default']
     Tab1: typeof import('./src/components/Tab1/index.vue')['default']
     Tab2: typeof import('./src/components/Tab2/index.vue')['default']
     Tab3: typeof import('./src/components/Tab3/index.vue')['default']
-    Tabs: typeof import('./src/components/Tabs.vue')['default']
-    VanButton: typeof import('vant/es')['Button']
+    Tabs: typeof import('./src/components/Tabs/index.vue')['default']
     VanCheckbox: typeof import('vant/es')['Checkbox']
+    VanPicker: typeof import('vant/es')['Picker']
     VanPopup: typeof import('vant/es')['Popup']
-    WgAgreement: typeof import('./src/components/wg-agreement/index.vue')['default']
   }
 }
