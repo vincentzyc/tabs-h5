@@ -24,26 +24,33 @@
 </template>
 
 <script setup lang="ts">
+import { defineAsyncComponent } from "vue";
 import tablogo1 from "@/assets/img/tablogo1.png";
 import tablogo2 from "@/assets/img/tablogo2.png";
 import tablogo3 from "@/assets/img/tablogo3.png";
-// defineProps<{ msg: string }>();
+
+const Tab2 = defineAsyncComponent(() => import("@/components/Tab2/index.vue"));
+
+const Tab3 = defineAsyncComponent(() => import("@/components/Tab3/index.vue"));
 
 let tabList = $ref([
   {
     title: "联通",
     logo: tablogo1,
     loaded: true,
+    tabId: "7sj28x5luu",
   },
   {
     title: "电信",
     logo: tablogo2,
     loaded: false,
+    tabId: "ug1e2tb61y",
   },
   {
     title: "移动",
     logo: tablogo3,
     loaded: false,
+    tabId: "8nngtvbqu3",
   },
 ]);
 

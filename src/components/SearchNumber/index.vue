@@ -19,5 +19,5 @@
 </template>
 
 <script setup lang="ts">
-let inputNum = $ref('')
+let inputNum = $ref("");
 </script>

@@ -42,7 +42,7 @@ const customFieldName = {
   children: "c",
 };
 
-let columns = $ref<unknown[]>([]);
+let columns = $ref<any[]>([]);
 
 function initCity() {
   if (props.level == 2) return (columns = CITY.map(l1 => ({ n: l1.n, c: l1.c.map(l2 => ({ n: l2.n })) })));

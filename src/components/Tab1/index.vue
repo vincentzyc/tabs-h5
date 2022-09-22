@@ -13,6 +13,7 @@
 
 <script setup lang="ts">
 import { expensesText } from "./static-data";
+
 let show = $ref(false);
 function showExpenses() {
   show = true;

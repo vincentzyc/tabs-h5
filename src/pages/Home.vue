@@ -7,8 +7,19 @@
 </template>
 
 <script setup lang="ts">
-// import { ref } from "vue";
-// defineProps<{ msg: string }>();
+import Tabs from "@/components/Tabs/index.vue";
+import { CommonApi } from "@/api";
+import { getUrlParam } from "@/utils";
+import { useMainStore } from "@/pinia";
+const mainStore = useMainStore();
 
-// const count = ref(0);
+const pid = getUrlParam("pid");
+
+async function getBaseData() {
+  if (!pid) return;
+  const param = { pid: pid, url: window.location.href, ipLocation: "1" };
+  let res = await CommonApi.pageIdLocation(param);
+  mainStore.setCjAllData(res);
+}
+getBaseData();
 </script>

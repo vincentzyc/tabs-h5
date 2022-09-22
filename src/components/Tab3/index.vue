@@ -13,6 +13,8 @@
 </template>
 
 <script setup lang="ts">
+import Agreement from "@/components/Agreement/index.vue";
+
 import { expensesText } from "./static-data";
 let show = $ref(false),
   agrList = $ref([

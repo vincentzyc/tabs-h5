@@ -20,5 +20,5 @@ function openPicker() {
         fill="#999999"
       /></svg
   ></div>
-  <CityPicker v-model:show="showPicker" level='2'/>
+  <CityPicker v-model:show="showPicker" level="2" />
 </template>
