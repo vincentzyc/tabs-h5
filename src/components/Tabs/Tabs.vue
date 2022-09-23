@@ -29,9 +29,9 @@ import tablogo1 from "@/assets/img/tablogo1.png";
 import tablogo2 from "@/assets/img/tablogo2.png";
 import tablogo3 from "@/assets/img/tablogo3.png";
 
-const Tab2 = defineAsyncComponent(() => import("@/components/Tab2/index.vue"));
+const Tab2 = defineAsyncComponent(() => import("@/components/Tab2/Tab2.vue"));
 
-const Tab3 = defineAsyncComponent(() => import("@/components/Tab3/index.vue"));
+const Tab3 = defineAsyncComponent(() => import("@/components/Tab3/Tab3.vue"));
 
 let tabList = $ref([
   {

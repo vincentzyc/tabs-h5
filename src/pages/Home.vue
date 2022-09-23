@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import Tabs from "@/components/Tabs/index.vue";
 import { CommonApi } from "@/api";
 import { getUrlParam } from "@/utils";
 import { useMainStore } from "@/pinia";
