@@ -28,6 +28,16 @@ import { defineAsyncComponent } from "vue";
 import tablogo1 from "@/assets/img/tablogo1.png";
 import tablogo2 from "@/assets/img/tablogo2.png";
 import tablogo3 from "@/assets/img/tablogo3.png";
+import { useMainStore } from "@/pinia";
+
+const mainStore = useMainStore();
+
+watch(
+  () => mainStore.cjAllData,
+  n => {
+    if (n) resetCjData(tabList[activeTab]);
+  }
+);
 
 const Tab2 = defineAsyncComponent(() => import("@/components/Tab2/Tab2.vue"));
 
@@ -56,9 +66,15 @@ let tabList = $ref([
 
 let activeTab = $ref(0);
 
+function resetCjData(tabItem: typeof tabList[0]) {
+  const curTab = mainStore.cjAllData?.tabInfo.find(item => tabItem.tabId === item.tabId);
+  if (curTab) mainStore.setCjData(curTab);
+}
+
 function changeTab(i: number) {
   const tabItem = tabList[i];
   tabItem.loaded = true;
   activeTab = i;
+  resetCjData(tabItem);
 }
 </script>

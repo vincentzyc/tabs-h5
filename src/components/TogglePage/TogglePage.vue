@@ -1,7 +1,13 @@
 <template>
   <div class="change-button-wrap">
     <div class="flex flex-center">
-      <van-button @click="getPrePage()" class="change-button" icon="arrow-left" round type="primary"
+      <van-button
+        @click="getPrePage()"
+        class="change-button"
+        icon="arrow-left"
+        round
+        type="primary"
+        :disabled="preDisable"
         >上一页</van-button
       >
       <van-button
@@ -12,6 +18,7 @@
         loading-text="下一页"
         round
         type="primary"
+        :loading="nextLoading"
         >下一页</van-button
       >
     </div>
@@ -19,10 +26,19 @@
 </template>
 
 <script setup lang="ts">
+const props = defineProps<{
+  pageIndex: number;
+  nextLoading: boolean;
+}>();
+
+const emits = defineEmits(["prepage", "nextpage"]);
+
+const preDisable = $computed(() => props.pageIndex === 1);
+
 function getPrePage() {
-  console.log("上一页");
+  emits("prepage");
 }
 function getNextPage() {
-  console.log("下一页");
+  emits("nextpage");
 }
 </script>

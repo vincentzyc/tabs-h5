@@ -1,6 +1,6 @@
 <template>
   <SelectNumber />
-  <img src="@/assets/img/tab1-2.jpg" alt="产品说明" class="widthfull" />
+  <img src="@/assets/img/tab1-2.jpg" alt="产品说明" class="widthfull mg-t10" />
   <img src="@/assets/img/tab1-3.jpg" alt="产品说明" class="widthfull" />
   <img src="@/assets/img/tab1-4.png" alt="产品说明" class="widthfull" />
   <div class="text-center expenses-wrap">

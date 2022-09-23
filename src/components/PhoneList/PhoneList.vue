@@ -1,14 +1,17 @@
 <template>
-  <div class="phone-list" v-if="phoneList.length > 0">
+  <div class="phone-list" v-if="list.length > 0">
     <ul class="flex flex-wrap space-between">
-      <li class="phone-item" v-for="phone in phoneList">
-        <div class="flex flex-center flex-column phone-number">
+      <li class="phone-item" v-for="(numItem, key) in list" @click="handleSelectedNum(numItem, key)">
+        <div
+          class="flex flex-center flex-column phone-number"
+          :class="{ isactive: selectNumItem?.num === numItem.num }"
+        >
           <p class="num-char">
-            <strong :style="getHighlight(num.highlight)" v-for="num in phone.item">{{ num.numChar }}</strong>
+            <strong :style="getHighlight(num.highlight)" v-for="num in numItem.item">{{ num.numChar }}</strong>
           </p>
           <div class="flex align-middle space-around phone-info">
-            <del class="phone-price">{{ getShowMoney(phone.showMoney) }}</del>
-            <p class="phone-text"> {{ phone.showMsg }}</p>
+            <del class="phone-price">{{ getShowMoney(numItem.showMoney) }}</del>
+            <p class="phone-text"> {{ numItem.showMsg }}</p>
           </div>
         </div>
       </li>
@@ -21,20 +24,17 @@
 </template>
 
 <script setup lang="ts">
-// import phoneList from "./num";
+import { TypeNumItem } from "@/api/types/common";
 
-type TypePhoneList = {
-  productCode: string;
-  num: string;
-  showMsg: string;
-  showMoney: string;
-  item: {
-    numChar: string;
-    highlight: string;
-  }[];
-}[];
+defineProps<{
+  list: TypeNumItem[];
+}>();
 
-let phoneList = $ref<TypePhoneList>([]);
+const emits = defineEmits<{
+  (e: "handleSelectedNum", numItem: TypeNumItem, key: number): void;
+}>();
+
+let selectNumItem = $ref<TypeNumItem | null>(null);
 
 function getShowMoney(txt: string) {
   if (typeof txt !== "string" || txt === "") return "";
@@ -44,5 +44,9 @@ function getShowMoney(txt: string) {
 function getHighlight(highlight: string) {
   if (highlight === "0") return {};
   if (highlight === "1") return { color: "#fd3134" };
+}
+function handleSelectedNum(numItem: TypeNumItem, key: number) {
+  selectNumItem = numItem;
+  emits("handleSelectedNum", numItem, key);
 }
 </script>

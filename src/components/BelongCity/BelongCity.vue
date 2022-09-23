@@ -1,8 +1,23 @@
 <script setup lang="ts">
-let showPicker = $ref(false),
-  showValue = $ref("");
+defineProps<{
+  locationCity: string[];
+  showCityAll: string,
+}>();
+let showPicker = $ref(false);
+let selectBelong = $ref([""]);
+const emits = defineEmits<{
+  (e: "selected", belong: string[]): void;
+}>();
+
+const showValue = $computed(() => selectBelong.join(" "));
 function openPicker() {
   showPicker = true;
+}
+function handleSelected(belong: string[]) {
+  if (belong) {
+    selectBelong = belong;
+    emits("selected", belong);
+  }
 }
 </script>
 
@@ -20,5 +35,5 @@ function openPicker() {
         fill="#999999"
       /></svg
   ></div>
-  <CityPicker v-model:show="showPicker" level="2" />
+  <BelongPicker v-model:show="showPicker" @selected="handleSelected" :locationCity="locationCity" :showCityAll="showCityAll"/>
 </template>

@@ -14,10 +14,18 @@
       ref="searchInput"
       type="text"
     />
-    <div class="search-button flex-none fs14">搜索</div>
+    <div class="search-button flex-none fs14" @click="search()">搜索</div>
   </div>
 </template>
 
 <script setup lang="ts">
+const emits = defineEmits<{
+  (e: "search", num: string): void;
+}>();
+
 let inputNum = $ref("");
+
+function search() {
+  emits("search", inputNum);
+}
 </script>

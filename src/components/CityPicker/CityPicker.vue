@@ -34,7 +34,9 @@ const props = withDefaults(defineProps<Props>(), {
   level: 3,
 });
 
-const emits = defineEmits(["update:show"]);
+const emits = defineEmits<{
+  (e: "update:show", bool: boolean): void;
+}>();
 
 const customFieldName = {
   text: "n",
@@ -51,6 +53,7 @@ function initCity() {
 }
 
 initCity();
+console.log(JSON.stringify(columns))
 
 function confirm(v: PickerConfirmEventParams) {
   console.log(v);

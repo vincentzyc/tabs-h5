@@ -13,6 +13,9 @@
 </template>
 
 <script setup lang="ts">
+const emits = defineEmits<{
+  (e: "selected", rule: string): void;
+}>();
 let ruleItems = $ref([
   {
     label: "全部",
@@ -51,5 +54,6 @@ let selectRule = $ref("ALL1");
 
 function handleSelectRule(ruleItem: any) {
   selectRule = ruleItem.value;
+  emits("selected", selectRule);
 }
 </script>
