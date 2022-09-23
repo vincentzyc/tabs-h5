@@ -16,6 +16,7 @@ const pid = getUrlParam("pid");
 
 async function getBaseData() {
   if (!pid) return;
+  mainStore.setPid(pid);
   const param = { pid: pid, url: window.location.href, ipLocation: "1" };
   let res = await CommonApi.pageIdLocation(param);
   mainStore.setCjAllData(res);
