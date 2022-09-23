@@ -17,5 +17,30 @@ export type PageIdLocation = {
   productCode: string,
   province: string,
   statisticsCode: string,
-  tabInfo: [],
+  tabId: string,
+  pid: string,
+  tabInfo: PageIdLocation[],
+}
+
+export interface TypeNumItem {
+  item: { highlight: string, numChar: string }[],
+  num: string,
+  productCode: string,
+  showMoney: string,
+  showMsg: string,
+  isLock?: boolean
+}
+
+export type GetPrettyMixItem = {
+  code: string,
+  data?: {
+    numItem: TypeNumItem[],
+  },
+  message: string,
+  success: boolean
+}
+
+export type LockNumber = {
+  code: string,
+  msg: string
 }

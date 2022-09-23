@@ -4,6 +4,8 @@ import * as Types from "./types/common"
 export interface ApiModuleCommon {
   submitForm<T>(param: unknown): Promise<T>,
   pageIdLocation<T = Types.PageIdLocation>(param: unknown): Promise<T>,
+  getPrettyMixItem<T = Types.GetPrettyMixItem>(param: unknown): Promise<T>,
+  lockNumber<T = Types.LockNumber>(param: unknown): Promise<T>,
 }
 
 export const Common: ApiModule[] = [{
@@ -13,8 +15,8 @@ export const Common: ApiModule[] = [{
   name: "pageIdLocation",
   url: "/service/jimPenn/pageIdLocation"
 }, {
-  name: "getHandleNoItem",
-  url: "/service/onlineSaleCard/getHandleNoItem",
+  name: "getPrettyMixItem",
+  url: "/service/onlineSaleCard/getPrettyMixItem",
   getError: true,
   getAllData: true
 }, {
