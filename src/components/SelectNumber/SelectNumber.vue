@@ -1,7 +1,7 @@
 <template>
   <div class="select-number-wrapper">
     <div class="search-number-wrapper">
-      <BelongCity :locationCity="locationCity" @selected="handleSelectedBelong" :showCityAll="showCityAll"/>
+      <BelongCity :locationCity="locationCity" @selected="handleSelectedBelong" :showCityAll="showCityAll" />
       <SearchNumber @search="handleSearch" />
       <NumberRule @selected="handleSelectedRule" />
     </div>
@@ -29,7 +29,11 @@ const mainStore = useMainStore();
 watch(
   () => mainStore.cjData,
   n => {
-    if (n) initBelong(n);
+    if (tabLoad) return;
+    if (n) {
+      initBelong(n);
+      tabLoad = true;
+    }
   }
 );
 
@@ -40,6 +44,7 @@ let selectedBelong = ["", ""];
 let searchNum = "";
 let numRule = "ALL1";
 
+let tabLoad = $ref(false);
 let pageIndex = $ref(1);
 let locationCity = $ref([""]);
 let showCityAll = $ref("");
@@ -63,7 +68,7 @@ function getNumParams() {
 function initBelong(cjData: PageIdLocation) {
   if (cjData) {
     locationCity = [cjData.province, cjData.city];
-    showCityAll = cjData.belongCity
+    showCityAll = cjData.belongCity;
   }
 }
 
