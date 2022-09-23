@@ -1,3 +1,4 @@
+import { PageIdLocation } from '@/api/types/common';
 import { defineStore } from 'pinia'
 
 // main is the name of the store. It is unique across your application
@@ -6,13 +7,11 @@ export const useMainStore = defineStore('main', {
   // a function that returns a fresh state
   state: () => ({
     counter: 0,
-    name: 'Eduardo',
+    pid: '',
     configTab: 'page',
     selectWg: null as Record<string, any> | null,
-    dragWg: null as Record<string, any> | null,
-    cjAllData: null as Record<string, any> | null,
-    cjData: null as Record<string, any> | null,
-    predefineColors: ['#000000', '#666666', '#cccccc', '#ffffff', 'rgba(255, 255, 255, 0)', '#ff0000', '#ff4500', '#ff8c00', '#ffd700', '#90ee90', '#00ced1', '#1e90ff', '#c71585']
+    cjAllData: null as PageIdLocation | null,
+    cjData: null as PageIdLocation | null,
   }),
   // optional getters
   getters: {
@@ -25,19 +24,16 @@ export const useMainStore = defineStore('main', {
   },
   // optional actions
   actions: {
-    setDragWg(payload: Record<string, any> | null) {
-      this.dragWg = payload;
+    setPid(payload: string) {
+      this.pid = payload;
     },
     setSelectWg(payload: Record<string, any> | null) {
       this.selectWg = payload;
     },
-    setConfigTab(payload: string) {
-      this.configTab = payload;
-    },
-    setCjAllData(payload: Record<string, any> | null) {
+    setCjAllData(payload: PageIdLocation | null) {
       this.cjAllData = payload;
     },
-    setCjData(payload: Record<string, any> | null) {
+    setCjData(payload: PageIdLocation | null) {
       this.cjData = payload;
     },
     reset() {
