@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     Agreement: typeof import('./src/components/Agreement/Agreement.vue')['default']
     AgreementPopup: typeof import('./src/components/AgreementPopup/AgreementPopup.vue')['default']
     BelongCity: typeof import('./src/components/BelongCity/BelongCity.vue')['default']
+    BelongPicker: typeof import('./src/components/BelongPicker/BelongPicker.vue')['default']
     CityPicker: typeof import('./src/components/CityPicker/CityPicker.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     NumberRule: typeof import('./src/components/NumberRule/NumberRule.vue')['default']
