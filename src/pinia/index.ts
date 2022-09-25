@@ -21,6 +21,7 @@ export const useMainStore = defineStore('main', {
     doubleCountPlusOne(): number {
       return this.doubleCount * 2 + 1
     },
+    locationCity: state => [state.cjData?.province || '', state.cjData?.city || '']
   },
   // optional actions
   actions: {
