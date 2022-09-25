@@ -29,17 +29,10 @@ export function addMatomo(id: number) {
 }
 
 // matomo上报
-// export function reportMatomo(title: string, value = '', onlyMatomo = false) {
 export function reportMatomo(title: string, value = '') {
   if (!title) return;
-  const templateId = getUrlParam('id') || '';
+  const templateId = getUrlParam('id') || '2022092701';
   const pid = getUrlParam('pid') || '';
   pid ? window._paq.push(["trackEvent", `${document.title}-${templateId}-${pid}`, title, value])
     : window._paq.push(["trackEvent", `${document.title}-${templateId}`, title, value]);
-  // if (onlyMatomo) return
-  // 顺便上报友盟
-  // if (window._czc) {
-  //   pid ? window._czc.push(["_trackEvent", `${document.title}-${templateId}-${pid}`, title, value])
-  //     : window._czc.push(["_trackEvent", `${document.title}-${templateId}`, title, value]);
-  // }
 }
