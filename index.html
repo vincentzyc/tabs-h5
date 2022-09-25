@@ -26,6 +26,33 @@
       n(), d.addEventListener("resize", function () { clearTimeout(i), i = setTimeout(n, 300) }, !1), d.addEventListener("pageshow", function (e) { e.persisted && (clearTimeout(i), i = setTimeout(n, 300)) }, !1), d.addEventListener("DOMContentLoaded", function () { o.body.style.position = "relative", o.body.style.fontSize = "14px", o.body.style.margin = "0 auto", o.body.style.maxWidth = t + "px" }, !1)
     }(750, 640);
   </script>
+  <!-- Matomo -->
+  <script type="text/javascript">
+    function isProduction() {
+      var locationOrigin = window.location.origin
+      if (/^((ht|f)tps?:\/\/)?[\w-]+(\.?[\w-]+)+:\d{1,6}\/?$/.test(locationOrigin)) return false
+      if (window.location.origin.includes('test-')) return false;
+      return true
+    }
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+      var u = "//cdn.lipush.com/junbo/js/";
+      var ou = "//tj.liulianglf.com/";
+      _paq.push(['setTrackerUrl', ou + 'matomo.php']);
+      isProduction() ? _paq.push(['setSiteId', '80']) : _paq.push(['setSiteId', '1']);
+      var d = document,
+        g = d.createElement('script'),
+        s = d.getElementsByTagName('script')[0];
+      g.type = 'text/javascript';
+      g.async = true;
+      g.src = u + 'matomo.js';
+      s.parentNode.insertBefore(g, s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
 </head>
 
 <body>
