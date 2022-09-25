@@ -1,11 +1,11 @@
 <template>
   <div class="flex align-middle form-item">
-    <div class="form-label">客户姓名</div>
-    <div class="form-input flex flex-auto align-middle">
+    <div class="form-label">身份证</div>
+    <div class="form-input flex-auto flex align-middle">
       <input
-        @blur="checkName(model)"
-        :maxlength="15"
-        placeholder="请输入客户姓名"
+        @blur="checkIDCard(model)"
+        :maxlength="18"
+        placeholder="未满16周岁请勿下单"
         type="text"
         v-model.trim="model"
       />
@@ -14,12 +14,10 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue';
-import { checkName } from '@/composition/business/use-verify-data'
-
+import { checkIDCard } from '@/composition/business/use-verify-data'
 
 export default defineComponent({
-  name: "FormName",
+  name: "FormIDCard",
   props: {
     modelValue: {
       required: true,
@@ -38,7 +36,7 @@ export default defineComponent({
     })
     return {
       model,
-      checkName,
+      checkIDCard,
     }
   }
 })

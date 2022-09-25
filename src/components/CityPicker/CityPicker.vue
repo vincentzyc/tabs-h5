@@ -8,11 +8,10 @@
   >
     <van-picker
       swipe-duration="500"
-      visible-option-num="15"
-      option-height="36"
       :columns="columns"
       :columns-field-names="customFieldName"
       show-toolbar
+      v-model="selectCity"
       title="请选择"
       @cancel="cancel"
       @change="onChange"
@@ -28,14 +27,17 @@ import type { PickerCancelEventParams, PickerChangeEventParams, PickerConfirmEve
 interface Props {
   show: boolean;
   level?: number | string;
+  locationCity: string[];
 }
 const props = withDefaults(defineProps<Props>(), {
   show: false,
   level: 3,
+  locationCity: () => [""],
 });
 
 const emits = defineEmits<{
   (e: "update:show", bool: boolean): void;
+  (e: "selected", belong: string[]): void;
 }>();
 
 const customFieldName = {
@@ -45,6 +47,7 @@ const customFieldName = {
 };
 
 let columns = $ref<any[]>([]);
+let selectCity = $ref([""]);
 
 function initCity() {
   if (props.level == 2) return (columns = CITY.map(l1 => ({ n: l1.n, c: l1.c.map(l2 => ({ n: l2.n })) })));
@@ -53,7 +56,6 @@ function initCity() {
 }
 
 initCity();
-console.log(JSON.stringify(columns))
 
 function confirm(v: PickerConfirmEventParams) {
   console.log(v);
@@ -69,5 +71,6 @@ function onChange(value: PickerChangeEventParams) {
 }
 function closedPopup() {
   console.log("关闭弹窗");
+  emits("selected", selectCity);
 }
 </script>

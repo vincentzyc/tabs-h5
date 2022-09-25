@@ -1,5 +1,6 @@
 <template>
   <div>电信</div>
+  <BaseForm />
   <Agreement title="填写并提交视为阅读并同意" :agrList="agrList" />
   <img src="@/assets/img/tab2-2.jpg" alt="产品说明" class="widthfull" />
   <img src="@/assets/img/tab2-3.jpg" alt="产品说明" class="widthfull" />

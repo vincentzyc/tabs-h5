@@ -4,7 +4,6 @@
         <div class="form-input flex-auto flex align-middle">
           <input
             @blur="checkPhone(model)"
-            v-bind="$attrs"
             :maxlength="11"
             placeholder="请输入手机号码"
             type="tel"
@@ -15,9 +14,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue';
 import { checkPhone } from '@/composition/business/use-verify-data'
-
 
 export default defineComponent({
   name: "FormPhone",

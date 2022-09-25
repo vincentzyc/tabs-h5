@@ -1,56 +1,30 @@
 <template>
-  <div>
-    <div class="form-wrap">
-      <FormBelongCity ref="domFormBelongCity" v-model="formData.belongCity"></FormBelongCity>
-      <FormSelectNum
-        :belongCity="formData.belongCity"
-        id="handleNo"
-        ref="domFormSelectNum"
-        v-model="formData.handleNo"
-      ></FormSelectNum>
-      <FormName id="custName" v-model="formData.custName"></FormName>
-      <FormPhone
-        @input="showOtherForm(formData.contactNumber)"
-        id="contactNumber"
-        v-model="formData.contactNumber"
-      ></FormPhone>
-      <div v-show="formData.showForm">
-        <FormIDCard id="idCardNo" v-model="formData.idCardNo"></FormIDCard>
-      </div>
-      <FormCity id="addressArr" v-model="formData.addressArr"></FormCity>
-      <FormAddress id="address" v-model="formData.address"></FormAddress>
+  <div class="form-wrap">
+    <FormName id="custName" v-model="formData.custName"></FormName>
+    <FormPhone
+      @input="showOtherForm(formData.contactNumber)"
+      id="contactNumber"
+      v-model="formData.contactNumber"
+    ></FormPhone>
+    <div v-show="formData.showForm">
+      <FormIDCard id="idCardNo" v-model="formData.idCardNo"></FormIDCard>
     </div>
+    <FormCity id="addressArr" :locationCity="mainStore.locationCity" v-model="formData.addressArr"></FormCity>
+    <FormAddress id="address" v-model="formData.address"></FormAddress>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, computed, ref, watch } from "vue";
 import Check from "@/utils/business/form-check";
 import { useMainStore } from "@/pinia";
 import { showToast } from "vant";
 import { closeLoading, openLoading } from "@/utils/loading";
 import { CommonApi } from "@/api";
-import FormBelongCity from "../FormItem/BelongCity.vue";
-import FormSelectNum from "../FormItem/SelectNum.vue";
-import FormAddress from "../FormItem/Address.vue";
-import FormIDCard from "../FormItem/IDCard.vue";
-import FormPhone from "../FormItem/Phone.vue";
-import FormName from "../FormItem/Name.vue";
-import FormCity from "../FormItem/City.vue";
 import { checkOut, successCallback } from "@/composition/business/use-verify-data";
 import { reportMatomo } from "@/utils/matomo";
 
 export default defineComponent({
   name: "BaseForm",
-  components: {
-    FormBelongCity,
-    FormSelectNum,
-    FormName,
-    FormAddress,
-    FormIDCard,
-    FormPhone,
-    FormCity,
-  },
   setup() {
     const mainStore = useMainStore();
     // const cjData = computed(() => store.state.cjData);
@@ -132,6 +106,7 @@ export default defineComponent({
     //   domFormBelongCity.value?.initCityPicker()
     // })
     return {
+      mainStore,
       formData,
       domFormBelongCity,
       submitOrder,
