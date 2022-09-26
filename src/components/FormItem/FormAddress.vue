@@ -5,7 +5,7 @@
       <input
         @blur="checkAddress(model)"
         :maxlength="50"
-        placeholder="请输入**街道门牌号**小区**层**房号"
+        placeholder="街道/镇+村/小区/楼+门牌号"
         type="text"
         v-model.trim="model"
       />

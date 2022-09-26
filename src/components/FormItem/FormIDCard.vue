@@ -1,11 +1,11 @@
 <template>
   <div class="flex align-middle form-item">
-    <div class="form-label">身份证</div>
+    <div class="form-label">身份证号</div>
     <div class="form-input flex-auto flex align-middle">
       <input
         @blur="checkIDCard(model)"
         :maxlength="18"
-        placeholder="未满16周岁请勿下单"
+        placeholder="输入办理人身份证（已加密）"
         type="text"
         v-model.trim="model"
       />

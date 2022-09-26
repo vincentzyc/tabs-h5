@@ -2,7 +2,9 @@
   <div class="flex align-middle form-item">
     <div class="form-label">收货地址</div>
     <div @click="openCityPicker()" class="form-input flex-auto flex align-middle disabled-input">
-      <input :value="showValue" class="wg-input" disabled placeholder="请选择省份/地市/县区" type="text" />
+      <div class="wg-input" :class="{ placeholder: !showValue }">{{
+        showValue ? showValue : "请选择省份/地市/县区"
+      }}</div>
     </div>
     <CityPicker @selected="closePicker" :locationCity="locationCity" ref="domCityPicker" v-model:show="showPicker" />
   </div>

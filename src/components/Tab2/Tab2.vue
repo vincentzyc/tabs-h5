@@ -1,7 +1,7 @@
 <template>
-  <div>电信</div>
   <BaseForm />
-  <Agreement title="填写并提交视为阅读并同意" :agrList="agrList" />
+  <Agreement title="填写并提交视为阅读并同意" :agrList="agrList" v-model:checked="checked" />
+  {{checked}}
   <img src="@/assets/img/tab2-2.jpg" alt="产品说明" class="widthfull" />
   <img src="@/assets/img/tab2-3.jpg" alt="产品说明" class="widthfull" />
   <div class="text-center expenses-wrap">
@@ -16,6 +16,7 @@
 <script setup lang="ts">
 import { expensesText } from "./static-data";
 let show = $ref(false),
+  checked = $ref(true),
   agrList = $ref([
     {
       title: "《个人信息保护政策》",

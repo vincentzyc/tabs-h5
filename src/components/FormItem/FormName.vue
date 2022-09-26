@@ -1,11 +1,11 @@
 <template>
   <div class="flex align-middle form-item">
-    <div class="form-label">客户姓名</div>
+    <div class="form-label">领卡姓名</div>
     <div class="form-input flex flex-auto align-middle">
       <input
         @blur="checkName(model)"
         :maxlength="15"
-        placeholder="请输入客户姓名"
+        placeholder="输入办理人姓名（已加密）"
         type="text"
         v-model.trim="model"
       />
