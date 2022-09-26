@@ -2,7 +2,7 @@ import { ApiModule } from "./types"
 import * as Types from "./types/common"
 
 export interface ApiModuleCommon {
-  submitForm<T>(param: unknown): Promise<T>,
+  submitForm<T = Types.SubmitForm>(param: unknown): Promise<T>,
   pageIdLocation<T = Types.PageIdLocation>(param: unknown): Promise<T>,
   getPrettyMixItem<T = Types.GetPrettyMixItem>(param: unknown): Promise<T>,
   lockNumber<T = Types.LockNumber>(param: unknown): Promise<T>,

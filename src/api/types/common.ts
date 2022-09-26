@@ -44,3 +44,13 @@ export type LockNumber = {
   code: string,
   msg: string
 }
+
+export type SubmitForm = {
+  msg: string,
+  orderCode: string,
+  responseCode: string,
+  routeCode: string,
+  sellerId: string,
+  subMediaCode: string,
+  url: string,
+}
