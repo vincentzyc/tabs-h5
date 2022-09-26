@@ -40,24 +40,24 @@ function isIDCardNum(num: string) {
 function validateIDCard(v: string) {
   //判断身份证号格式
   if (isIDCardNum(v) !== true) return '请输入正确的身份证号码';
-  const year = new Date().getFullYear();
-  const month = new Date().getMonth() + 1;
-  const day = new Date().getDate();
-  const birYear = parseInt(v.substr(6, 4));
-  const birMonth = parseInt(v.substr(10, 2));
-  const birDay = parseInt(v.substr(12, 2));
-  const age = year - birYear;
+  // const year = new Date().getFullYear();
+  // const month = new Date().getMonth() + 1;
+  // const day = new Date().getDate();
+  // const birYear = parseInt(v.substr(6, 4));
+  // const birMonth = parseInt(v.substr(10, 2));
+  // const birDay = parseInt(v.substr(12, 2));
+  // const age = year - birYear;
 
-  if (age < 16) return '年龄需大于等于16周岁才可办理';
-  if (age === 16) {
-    if (month < birMonth) return '年龄需大于等于16周岁才可办理';
-    if (month === birMonth && day < birDay) return '年龄需大于等于16周岁才可办理';
-  }
-  if (age > 51) return '年龄需小于等于51周岁才可办理';
-  if (age === 51) {
-    if (month > birMonth) return '年龄需小于等于51周岁才可办理';
-    if (month === birMonth && day > birDay) return '年龄需小于等于51周岁才可办理';
-  }
+  // if (age < 16) return '年龄需大于等于16周岁才可办理';
+  // if (age === 16) {
+  //   if (month < birMonth) return '年龄需大于等于16周岁才可办理';
+  //   if (month === birMonth && day < birDay) return '年龄需大于等于16周岁才可办理';
+  // }
+  // if (age > 51) return '年龄需小于等于51周岁才可办理';
+  // if (age === 51) {
+  //   if (month > birMonth) return '年龄需小于等于51周岁才可办理';
+  //   if (month === birMonth && day > birDay) return '年龄需小于等于51周岁才可办理';
+  // }
 
   return true
 }
@@ -65,7 +65,7 @@ function validateIDCard(v: string) {
 const Check = {
   checkName(value: string) {
     if (!value) return '请输入姓名';
-    if (/^[\u4e00-\u9fa5]{2,20}$/.test(value)) return true;
+    if (/^[\u4e00-\u9fa5\\·]{2,20}$/.test(value)) return true;
     if (value.length < 2 || value.length > 20) return '姓名长度不能小于2或超过20';
     return '姓名必须为汉字'
   },
@@ -86,7 +86,7 @@ const Check = {
   checkAddress(value: string) {
     if (!value) return '请输入详细地址';
     //地址信息不得含特殊字符
-    const roadReg = /^[\u4E00-\u9FA5A-Za-z0-9_—()（）-]+$/gi;
+    const roadReg = /^[\u4E00-\u9FA5A-Za-z0-9/\\_—()（）-]+$/gi;
     if (!roadReg.test(value)) return '地址信息不得含特殊字符哟';
     const roadReg2 = /^[A-Za-z0-9]+$/gi;
     if (roadReg2.test(value)) return '地址信息不得纯为英文字母或数字哟';
