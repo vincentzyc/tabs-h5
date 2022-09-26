@@ -1,5 +1,5 @@
 <template>
-  <van-checkbox v-model="checked" icon-size="14px" checked-color="#666666" label-disabled>
+  <van-checkbox v-model="checked" icon-size="14px" checked-color="#666666" label-disabled @change="handleChecked">
     <p class="agreement-text">
       <span>{{ title }}</span>
       <span v-for="(agr, key) in agrList">
@@ -14,17 +14,25 @@
 <script setup lang="ts">
 defineProps<{
   title: string;
+  checked: boolean;
   agrList: {
     title: string;
     text: string;
   }[];
 }>();
-let checked = $ref(false),
-  showPopup = $ref(false),
+
+const emit = defineEmits<{
+  (e: "update:checked", bool: boolean): void;
+}>();
+
+let showPopup = $ref(false),
   curText = $ref("");
 
 function openAgreement(title: string, text: string) {
   showPopup = true;
   curText = text;
+}
+function handleChecked(bool: boolean) {
+  emit("update:checked", bool);
 }
 </script>
