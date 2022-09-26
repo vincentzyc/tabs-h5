@@ -2,7 +2,7 @@
 import Check from '@/utils/business/form-check';
 import { scrollIntoView } from '@/utils/dom';
 import { closeLoading } from '@/utils/loading';
-import { reportMatomo } from '@/utils/matomo';
+import { initfingerprint2, reportMatomo } from '@/utils/report';
 import { showToast } from 'vant';
 
 export const successCallback = async (resData: Record<string, any>, contactNumber: string) => {
@@ -13,7 +13,7 @@ export const successCallback = async (resData: Record<string, any>, contactNumbe
   // let realLink = ''
   // const cjData = store.state.cjData
   // setTimeout(() => {
-    closeLoading();
+  closeLoading();
   //   // 链接跳转优先级： 后台指定跳转链接 > 已配置跳转链接 > 头条渠道跳转链接 > 默认跳转链接
   //   if (resData?.url) {
   //     realLink = resData.url.includes('?') ? resData.url + '&mbk=' + encryptPhone : resData.url + '?mbk=' + encryptPhone
@@ -30,7 +30,18 @@ export const successCallback = async (resData: Record<string, any>, contactNumbe
 
 export const checkName = (v: string) => {
   const checkRes = Check.checkName(v)
-  if (checkRes === true) return true
+  if (checkRes === true) {
+    initfingerprint2()
+    return true
+  }
+  showToast(checkRes)
+}
+export const checkPhone = (v: string) => {
+  const checkRes = Check.checkPhone(v)
+  if (checkRes === true) {
+    initfingerprint2()
+    return true
+  }
   showToast(checkRes)
 }
 export const checkIDCard = (v: string) => {
@@ -38,16 +49,8 @@ export const checkIDCard = (v: string) => {
   if (checkRes === true) return true
   showToast(checkRes)
 }
-export const checkPhone = (v: string) => {
-  const checkRes = Check.checkPhone(v)
-  if (checkRes === true) return true
-  showToast(checkRes)
-}
 export const checkCity = (v: string[]) => {
-  if (Array.isArray(v) && v.length === 3) {
-    const rData = { city: v[1], district: v[2], province: v[0] }
-    true
-  }
+  if (Array.isArray(v) && v.length === 3) return true
 }
 export const checkAddress = (v: string) => {
   const checkRes = Check.checkAddress(v)
@@ -56,12 +59,12 @@ export const checkAddress = (v: string) => {
 }
 export const checkOut = (formData: Record<string, any>) => {
   //校验表单
-  if (!formData.handleNo) {
-    reportMatomo(`前端校验不通过-请选择号码`)
-    const dom = document.getElementById('handleNo')
-    if (dom) scrollIntoView(dom)
-    return '请选择号码';
-  }
+  // if (!formData.handleNo) {
+  //   reportMatomo(`前端校验不通过-请选择号码`)
+  //   const dom = document.getElementById('handleNo')
+  //   if (dom) scrollIntoView(dom)
+  //   return '请选择号码';
+  // }
 
   const checkedName = Check.checkName(formData.custName);
   if (checkedName !== true) {
