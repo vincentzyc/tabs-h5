@@ -64,20 +64,15 @@ function validateIDCard(v: string) {
 
 const Check = {
   checkName(value: string) {
-    if (!value) return '请输入姓名';
+    if (!value) return '请输入领卡姓名';
     if (/^[\u4e00-\u9fa5\\·]{2,20}$/.test(value)) return true;
     if (value.length < 2 || value.length > 20) return '姓名长度不能小于2或超过20';
     return '姓名必须为汉字'
   },
   checkPhone(value: string) {
-    if (!value) return '请输入手机号';
+    if (!value) return '请输入联系电话';
     if (/^(?:(?:\+|00)86)?1[3-9]\d{9}$/.test(value)) return true;
     return '请输入正确的手机号码'
-  },
-  verifyCode(value: string) {
-    if (!value) return '请输入验证码';
-    if (value.length === 4) return true;
-    return "验证码错误";
   },
   checkIDCard(value: string) {
     if (!value) return '请输入身份证号';
@@ -94,7 +89,7 @@ const Check = {
     return true;
   },
   city(value: string) {
-    if (!value) return '请选择收货地址';
+    if (!value) return '请选择收货城市';
     return true;
   }
 }

@@ -1,5 +1,4 @@
 import { showLoadingToast, closeToast } from 'vant';
-import 'vant/es/toast/style';
 
 export function openLoading(text?: string): void {
   showLoadingToast({
