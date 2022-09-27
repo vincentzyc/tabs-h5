@@ -8,7 +8,7 @@ export const useMainStore = defineStore('main', {
   state: () => ({
     counter: 0,
     pid: '',
-    configTab: 'page',
+    activeTab: 0,
     selectWg: null as Record<string, any> | null,
     cjAllData: null as PageIdLocation | null,
     cjData: null as PageIdLocation | null,
@@ -28,8 +28,8 @@ export const useMainStore = defineStore('main', {
     setPid(payload: string) {
       this.pid = payload;
     },
-    setSelectWg(payload: Record<string, any> | null) {
-      this.selectWg = payload;
+    setActiveTab(payload: number) {
+      this.activeTab = payload;
     },
     setCjAllData(payload: PageIdLocation | null) {
       this.cjAllData = payload;
