@@ -25,6 +25,7 @@
 <script setup lang="ts">
 import CITY from "./city.json";
 import type { PickerInstance } from "vant";
+import { reportMatomo } from "@/utils/report";
 interface Props {
   show: boolean;
   locationCity: string[];
@@ -90,5 +91,6 @@ function cancel() {
 
 function closedPopup() {
   emits("selected", selectBelong);
+  reportMatomo("选择归属地", selectBelong.join(" "));
 }
 </script>

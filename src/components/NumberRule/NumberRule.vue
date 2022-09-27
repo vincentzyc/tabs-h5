@@ -16,41 +16,52 @@
 const emits = defineEmits<{
   (e: "selected", rule: string): void;
 }>();
-let ruleItems = $ref([
-  {
-    label: "全部",
-    value: "ALL1",
-  },
-  {
-    label: "AAA+",
-    value: "AAA+",
-  },
-  {
-    label: "ABCBA",
-    value: "ABCBA",
-  },
-  {
-    label: "AABA",
-    value: "AABA",
-  },
-  {
-    label: "AABB",
-    value: "AABB",
-  },
-  {
-    label: "ABAA",
-    value: "ABAA",
-  },
-  {
-    label: "ABAB",
-    value: "ABAB",
-  },
-  {
-    label: "尾号8",
-    value: "尾号8",
-  },
-]);
-let selectRule = $ref("ALL1");
+
+interface Props {
+  ruleItems?: {
+    label: string;
+    value: string;
+  }[];
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  ruleItems: () => [
+    {
+      label: "全部",
+      value: "ALL1",
+    },
+    {
+      label: "AAA+",
+      value: "AAA+",
+    },
+    {
+      label: "ABCBA",
+      value: "ABCBA",
+    },
+    {
+      label: "AABA",
+      value: "AABA",
+    },
+    {
+      label: "AABB",
+      value: "AABB",
+    },
+    {
+      label: "ABAA",
+      value: "ABAA",
+    },
+    {
+      label: "ABAB",
+      value: "ABAB",
+    },
+    {
+      label: "尾号8",
+      value: "尾号8",
+    },
+  ]
+});
+
+let selectRule = $ref(props.ruleItems[0].value);
 
 function handleSelectRule(ruleItem: any) {
   selectRule = ruleItem.value;

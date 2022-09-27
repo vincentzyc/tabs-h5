@@ -1,12 +1,23 @@
 <template>
-  <div>移动</div>
-  <Agreement title="填写并提交视为阅读并同意" :agrList="agrList" />
+  <SelectNumber @selected="selectNum" showBelongCity showSearchNumber :ruleItems="ruleItems" />
+  <Agreement title="填写并提交视为阅读并同意" :agrList="agrList" v-model:checked="checked" />
   <img src="@/assets/img/tab3-2.jpg" alt="产品说明" class="widthfull" />
   <img src="@/assets/img/tab3-3.jpg" alt="产品说明" class="widthfull" />
   <img src="@/assets/img/tab3-4.png" alt="产品说明" class="widthfull" />
   <div class="text-center expenses-wrap">
     <span class="expenses-text" @click="showExpenses()">资费详情说明</span>
   </div>
+  <van-popup v-model:show="showForm" class="common-popup" style="max-width: 576px" teleport="body">
+    <div class="common-wrap" v-if="selectNumItem">
+      <p class="info-text-number"
+        >已选择<span class="info-number">靓号 {{ selectNumItem.num }}</span> {{ showCity }}</p
+      >
+      <p class="info-text">根据国家手机号卡实名制规定</p>
+      <p class="info-text">请如实填写信息，以便我们及时为您送达</p>
+      <BaseForm :handleNo="selectNumItem.num" @submit="submitOrder" />
+      <Agreement title="填写并提交视为阅读并同意" :agrList="agrList" v-model:checked="checked" />
+    </div>
+  </van-popup>
   <van-popup class="agreement-popup" v-model:show="show" round>
     <div class="agreement-wrap">{{ expensesText }}</div>
     <div class="agreement-confirm" @click="close()">我知道了</div>
@@ -14,8 +25,14 @@
 </template>
 
 <script setup lang="ts">
+import { TypeNumItem } from "@/api/types/common";
 import { expensesText } from "./static-data";
-let show = $ref(false),
+
+provide("tabIndex", 2);
+
+let showForm = $ref(false),
+  show = $ref(false),
+  checked = $ref(true),
   agrList = $ref([
     {
       title: "《中国移动用户入网协议》",
@@ -33,11 +50,30 @@ let show = $ref(false),
       title: "《单独同意书》",
       text: "https://h5.lipush.com/h5/index.html?id=7883210563728253535",
     },
+  ]),
+  ruleItems = $ref([
+    {
+      label: "全部",
+      value: "全部",
+    },
   ]);
+
+let selectNumItem = $ref<TypeNumItem | null>(null),
+  showCity = $ref("");
+
 function showExpenses() {
   show = true;
 }
 function close() {
   show = false;
+}
+
+function selectNum(numItem: TypeNumItem, selectedBelong: string[]) {
+  selectNumItem = numItem;
+  showCity = selectedBelong.join(" ");
+  showForm = true;
+}
+function submitOrder() {
+  checked = true;
 }
 </script>

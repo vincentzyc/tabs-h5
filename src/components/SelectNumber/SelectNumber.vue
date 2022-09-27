@@ -1,9 +1,14 @@
 <template>
   <div class="select-number-wrapper">
     <div class="search-number-wrapper">
-      <BelongCity :locationCity="locationCity" @selected="handleSelectedBelong" :showCityAll="showCityAll" />
-      <SearchNumber @search="handleSearch" />
-      <NumberRule @selected="handleSelectedRule" />
+      <BelongCity
+        v-if="showBelongCity"
+        :locationCity="locationCity"
+        @selected="handleSelectedBelong"
+        :showCityAll="showCityAll"
+      />
+      <SearchNumber v-if="showSearchNumber" @search="handleSearch" />
+      <NumberRule v-if="showNumberRule" @selected="handleSelectedRule" :ruleItems="ruleItems" />
     </div>
     <PhoneList :list="phoneList" @handleSelectedNum="lockNumber" />
     <TogglePage
@@ -23,16 +28,34 @@ import { useMainStore } from "@/pinia";
 import { CommonApi } from "@/api";
 import { closeLoading, openLoading } from "@/utils/loading";
 import { showToast } from "vant";
+import { reportMatomo } from "@/utils/report";
+
+const tabIndex = inject("tabIndex");
+
+let isNumInit = false;
+
+const props = defineProps<{
+  ruleItems?: {
+    label: string;
+    value: string;
+  }[];
+  showBelongCity?: boolean;
+  showSearchNumber?: boolean;
+  showNumberRule?: boolean;
+}>();
+
+const emit = defineEmits<{
+  (e: "selected", numItem: TypeNumItem, selectedBelong: string[]): void;
+}>();
 
 const mainStore = useMainStore();
 
 watch(
   () => mainStore.cjData,
   n => {
-    if (tabLoad) return;
+    if (tabIndex !== mainStore.activeTab) return;
     if (n) {
       initBelong(n);
-      tabLoad = true;
     }
   }
 );
@@ -42,9 +65,8 @@ const defaultNum = 8;
 let allNums: TypeNumItem[] = [];
 let selectedBelong = ["", ""];
 let searchNum = "";
-let numRule = "ALL1";
+let numRule = props.ruleItems?.[0].value || "ALL1";
 
-let tabLoad = $ref(false);
 let pageIndex = $ref(1);
 let locationCity = $ref([""]);
 let showCityAll = $ref("");
@@ -66,9 +88,11 @@ function getNumParams() {
 }
 
 function initBelong(cjData: PageIdLocation) {
+  if (isNumInit) return;
   if (cjData) {
     locationCity = [cjData.province, cjData.city];
     showCityAll = cjData.belongCity;
+    isNumInit = true;
   }
 }
 
@@ -80,21 +104,25 @@ function handleSelectedBelong(belong: string[]) {
 function handleSearch(num: string) {
   searchNum = num;
   getNumber();
+  reportMatomo("点击搜索号码", num);
 }
 
 function handleSelectedRule(rule: string) {
   numRule = rule;
   getNumber();
+  reportMatomo("选择规则", rule);
 }
 
 function handlePrepage() {
   pageIndex--;
   setPhoneList(pageIndex);
+  reportMatomo("上一页");
 }
 
 function handleNextpage() {
   pageIndex++;
   setPhoneList(pageIndex);
+  reportMatomo("下一页");
 }
 
 function setPhoneList(pageIndex: number) {
@@ -140,16 +168,8 @@ async function lockNumber(numItem: TypeNumItem, key: number) {
 }
 
 function handleSelectedNum(numItem: TypeNumItem) {
-  console.log(numItem);
-  // this.item.value = phone.num;
-  //     this.item.selectNum++;
-  //     this.item.valueObj = phone;
-  //     this.Data.newProductCode = phone.productCode || "";
-  //     if (this.item.popupList?.length > 0) {
-  //       this.$api.reportMatomo("归属地选号3-点击弹窗");
-  //       this.$refs.selectNumCustomPopup.open();
-  //     }
-  //     this.$api.reportMatomo("选择号码", phone.num);
+  emit("selected", numItem, selectedBelong);
+  reportMatomo("选择号码", numItem.num);
 }
 
 function resetData() {
@@ -174,4 +194,8 @@ async function getNumber() {
     resetData();
   }
 }
+
+onMounted(() => {
+  if (mainStore.cjData) initBelong(mainStore.cjData);
+});
 </script>

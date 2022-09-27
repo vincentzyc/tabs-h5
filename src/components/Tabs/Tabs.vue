@@ -4,44 +4,41 @@
       <li
         class="flex flex-center tab-bar"
         v-for="(item, key) in tabList"
-        :class="{ active: activeTab === key }"
+        :class="{ active: mainStore.activeTab === key }"
         @click="changeTab(key)"
       >
         <span class="tab-bar-title">{{ item.title }}</span>
         <img v-lazy="item.logo" :alt="item.title" class="tab-bar-logo" />
       </li>
     </ul>
-    <div v-if="tabList[0].loaded" v-show="activeTab === 0" class="tab-content">
+    <div v-show="mainStore.activeTab === 0" class="tab-content">
       <Tab1 />
     </div>
-    <div v-if="tabList[1].loaded" v-show="activeTab === 1" class="tab-content">
+    <div v-if="tabList[1].loaded" v-show="mainStore.activeTab === 1" class="tab-content">
       <Tab2 />
     </div>
-    <div v-if="tabList[2].loaded" v-show="activeTab === 2" class="tab-content">
+    <div v-if="tabList[2].loaded" v-show="mainStore.activeTab === 2" class="tab-content">
       <Tab3 />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineAsyncComponent } from "vue";
+import { showDialog } from "vant";
 import tablogo1 from "@/assets/img/tablogo1.png";
 import tablogo2 from "@/assets/img/tablogo2.png";
 import tablogo3 from "@/assets/img/tablogo3.png";
 import { useMainStore } from "@/pinia";
+import { reportMatomo } from "@/utils/report";
 
 const mainStore = useMainStore();
 
 watch(
   () => mainStore.cjAllData,
   n => {
-    if (n) resetCjData(tabList[activeTab]);
+    if (n) resetCjData(tabList[mainStore.activeTab]);
   }
 );
-
-const Tab2 = defineAsyncComponent(() => import("@/components/Tab2/Tab2.vue"));
-
-const Tab3 = defineAsyncComponent(() => import("@/components/Tab3/Tab3.vue"));
 
 let tabList = $ref([
   {
@@ -64,17 +61,26 @@ let tabList = $ref([
   },
 ]);
 
-let activeTab = $ref(0);
-
 function resetCjData(tabItem: typeof tabList[0]) {
+  if (!Array.isArray(mainStore.cjAllData?.tabInfo) || mainStore.cjAllData?.tabInfo.length === 0) {
+    showDialog({ message: "未返回相关产品信息" });
+    reportMatomo("tabInfo返回为空");
+    return;
+  }
   const curTab = mainStore.cjAllData?.tabInfo.find(item => tabItem.tabId === item.tabId);
-  if (curTab) mainStore.setCjData(curTab);
+  if (curTab) {
+    mainStore.setCjData(curTab);
+  } else {
+    showDialog({ message: "未找到相关产品信息" });
+    reportMatomo("未匹配到产品信息");
+  }
 }
 
 function changeTab(i: number) {
   const tabItem = tabList[i];
   tabItem.loaded = true;
-  activeTab = i;
+  mainStore.setActiveTab(i);
   resetCjData(tabItem);
+  reportMatomo("Tabs标签-切换标签" + (i + 1));
 }
 </script>

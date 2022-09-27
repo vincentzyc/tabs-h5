@@ -25,16 +25,29 @@ import { useMainStore } from "@/pinia";
 import { showToast } from "vant";
 import { closeLoading, openLoading } from "@/utils/loading";
 import { CommonApi } from "@/api";
-import { checkOut, successCallback } from "@/composition/business/use-verify-data";
+import { checkOut } from "@/composition/business/use-verify-data";
 import { reportMatomo } from "@/utils/report";
 import { PageIdLocation } from "@/api/types/common";
+
+const FormCity = defineAsyncComponent(() => import("@/components/FormItem/FormCity.vue"));
+
+const toutiaoDefaultLink = "https://h5.lipush.com/h5/index.html?id=2021080216415100047"; // M001
+
+const gdtDefaultLink = "https://h5.lipush.com/h5/index.html?id=3804505262428528861"; // M002
+
+const props = defineProps<{
+  handleNo?: string;
+}>();
+
+const emit = defineEmits<{
+  (e: "submit"): void;
+}>();
 
 const mainStore = useMainStore();
 
 const formData = reactive({
   addressArr: [],
   showForm: false,
-  handleNo: "",
   custName: "",
   city: "",
   district: "",
@@ -76,7 +89,7 @@ const submitOrder = async () => {
   // eslint-disable-next-line no-undef
   if (typeof murmur !== "undefined" && murmur) {
     // eslint-disable-next-line no-undef
-    fingerNum = fingerNum;
+    fingerNum = murmur;
     reportMatomo(`获取到指纹-${fingerNum}`);
   }
 
@@ -86,18 +99,17 @@ const submitOrder = async () => {
     pid: mainStore.cjData?.pid || "",
     productCode: mainStore.cjData?.productCode || "",
     fingerNum: fingerNum,
+    handleNo: props.handleNo || "",
     ...formData,
   };
+
   reportMatomo("点击提交按钮");
+  emit("submit");
   // 调接口提交
   let res = await CommonApi.submitForm<Record<string, any>>(params);
   reportMatomo("提交接口返回", JSON.stringify(res));
   if (res.responseCode === "0") {
-    if (res.subMediaCode === "1") {
-      reportMatomo(`不上报媒体-subMediaCode=${res.subMediaCode}`);
-      return successCallback(res, formData.contactNumber);
-    }
-    successCallback(res, formData.contactNumber);
+    successCallback({ resData: res, mediaCode: mainStore.cjData?.mediaCode });
   } else {
     const newParam = { pid: params.pid, url: window.location.href };
     let newRes = await CommonApi.pageIdLocation(newParam);
@@ -106,6 +118,21 @@ const submitOrder = async () => {
     showToast(res.msg);
   }
 };
+
+async function successCallback(resData: Record<string, any>) {
+  let realLink = "";
+  setTimeout(() => {
+    closeLoading();
+    if (resData?.url) {
+      realLink = resData.url;
+    } else if (resData.mediaCode === "M002") {
+      realLink = gdtDefaultLink;
+    } else {
+      realLink = toutiaoDefaultLink;
+    }
+    window.location.href = realLink;
+  }, 300);
+}
 
 function updateAllCjData(newRes: PageIdLocation) {
   if (mainStore.cjAllData?.tabInfo) {
@@ -120,11 +147,8 @@ function updateAllCjData(newRes: PageIdLocation) {
   if (mainStore.cjData) mainStore.cjData.pageId = newRes.pageId;
   mainStore.setCjData(mainStore.cjData);
 }
-// onMounted(async () => {
-//   await nextTick()
-//   domFormBelongCity.value?.initCityPicker()
-// })
 </script>
+
 <style lang="stylus">
 @import './style.styl';
 </style>

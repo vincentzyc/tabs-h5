@@ -1,7 +1,8 @@
 <template>
-  <BaseForm />
+  <div class="form-wrapper">
+    <BaseForm @submit="submitOrder" />
+  </div>
   <Agreement title="填写并提交视为阅读并同意" :agrList="agrList" v-model:checked="checked" />
-  {{checked}}
   <img src="@/assets/img/tab2-2.jpg" alt="产品说明" class="widthfull" />
   <img src="@/assets/img/tab2-3.jpg" alt="产品说明" class="widthfull" />
   <div class="text-center expenses-wrap">
@@ -15,6 +16,9 @@
 
 <script setup lang="ts">
 import { expensesText } from "./static-data";
+
+provide("tabIndex", 1);
+
 let show = $ref(false),
   checked = $ref(true),
   agrList = $ref([
@@ -36,5 +40,8 @@ function showExpenses() {
 }
 function close() {
   show = false;
+}
+function submitOrder() {
+  checked = true;
 }
 </script>

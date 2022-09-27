@@ -1,5 +1,12 @@
 <template>
-  <van-checkbox v-model="checked" icon-size="14px" checked-color="#666666" label-disabled @change="handleChecked">
+  <van-checkbox
+    v-model="checked"
+    icon-size="14px"
+    checked-color="#cccccc"
+    label-disabled
+    @change="handleChecked"
+    @click="handleClick"
+  >
     <p class="agreement-text">
       <span>{{ title }}</span>
       <span v-for="(agr, key) in agrList">
@@ -12,7 +19,9 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+import { reportMatomo } from "@/utils/report";
+
+const props = defineProps<{
   title: string;
   checked: boolean;
   agrList: {
@@ -34,5 +43,8 @@ function openAgreement(title: string, text: string) {
 }
 function handleChecked(bool: boolean) {
   emit("update:checked", bool);
+}
+function handleClick() {
+  props.checked ? reportMatomo("勾选协议") : reportMatomo("取消勾选协议");
 }
 </script>

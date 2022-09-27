@@ -5,8 +5,11 @@
     v-model:show="show"
     :close-on-click-overlay="false"
     @closed="closedPopup"
+    teleport="body"
   >
     <van-picker
+      visible-option-num="9"
+      option-height="36"
       swipe-duration="500"
       :columns="columns"
       :columns-field-names="customFieldName"
@@ -14,7 +17,6 @@
       v-model="selectCity"
       title="请选择"
       @cancel="cancel"
-      @change="onChange"
       @confirm="confirm"
     />
   </van-popup>
@@ -22,7 +24,7 @@
 
 <script setup lang="ts">
 import CITY from "./city.json";
-import type { PickerCancelEventParams, PickerChangeEventParams, PickerConfirmEventParams } from "vant";
+import type { PickerCancelEventParams, PickerConfirmEventParams } from "vant";
 
 interface Props {
   show: boolean;
@@ -58,17 +60,12 @@ function initCity() {
 initCity();
 
 function confirm(v: PickerConfirmEventParams) {
-  console.log(v);
   emits("update:show", false);
 }
 function cancel(v: PickerCancelEventParams) {
-  console.log(v);
   emits("update:show", false);
 }
 
-function onChange(value: PickerChangeEventParams) {
-  console.log(value);
-}
 function closedPopup() {
   console.log("关闭弹窗");
   emits("selected", selectCity);
