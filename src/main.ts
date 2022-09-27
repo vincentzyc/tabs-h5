@@ -3,7 +3,9 @@ import { Lazyload } from 'vant';
 import App from './App.vue'
 import Axios from './plugins/axios'
 import { createPinia } from 'pinia'
-// import 'vant/lib/style';
+import '@vant/touch-emulator' //vant 桌面端适配
+import 'vant/es/toast/style';
+import 'vant/es/dialog/style';
 import './assets/css/base.css'
 import './assets/css/main.css'
 
