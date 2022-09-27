@@ -1,37 +1,14 @@
 // import { getUrlParamStr } from '@/utils/business/common';
 import Check from '@/utils/business/form-check';
 import { scrollIntoView } from '@/utils/dom';
-import { closeLoading } from '@/utils/loading';
 import { initfingerprint2, reportMatomo } from '@/utils/report';
 import { showToast } from 'vant';
-
-export const successCallback = async (resData: Record<string, any>, contactNumber: string) => {
-  console.log(resData)
-  console.log(contactNumber)
-  // const urlMobileCode: any = await import(`@/utils/business/url-mobile`);
-  // const encryptPhone = urlMobileCode.encryptMobile(contactNumber)
-  // let realLink = ''
-  // const cjData = store.state.cjData
-  // setTimeout(() => {
-  closeLoading();
-  //   // 链接跳转优先级： 后台指定跳转链接 > 已配置跳转链接 > 头条渠道跳转链接 > 默认跳转链接
-  //   if (resData?.url) {
-  //     realLink = resData.url.includes('?') ? resData.url + '&mbk=' + encryptPhone : resData.url + '?mbk=' + encryptPhone
-  //   } else if (resData.url) {
-  //     realLink = resData.url
-  //   } else if (cjData?.mediaCode === 'M001') {
-  //     realLink = 'https://h5.liulianglf.cn/h5/index.html?id=2020101811302904760&mbk=' + encryptPhone
-  //   } else {
-  //     realLink = 'https://h5.lipush.com/h5/index.html?id=2021050616510700413&mbk=' + encryptPhone
-  //   }
-  //   window.location.href = getUrlParamStr(realLink)
-  // }, 500);
-}
 
 export const checkName = (v: string) => {
   const checkRes = Check.checkName(v)
   if (checkRes === true) {
     initfingerprint2()
+    reportMatomo('输入框-姓名-name', v)
     return true
   }
   showToast(checkRes)
@@ -40,21 +17,31 @@ export const checkPhone = (v: string) => {
   const checkRes = Check.checkPhone(v)
   if (checkRes === true) {
     initfingerprint2()
+    reportMatomo('手机号-手机号-phone', v)
     return true
   }
   showToast(checkRes)
 }
 export const checkIDCard = (v: string) => {
   const checkRes = Check.checkIDCard(v)
-  if (checkRes === true) return true
+  if (checkRes === true) {
+    reportMatomo('输入框-身份证-idCard', v)
+    return true
+  }
   showToast(checkRes)
 }
 export const checkCity = (v: string[]) => {
-  if (Array.isArray(v) && v.length === 3) return true
+  if (Array.isArray(v) && v.length === 3) {
+    reportMatomo('城市选择-城市-city', v.join(","))
+    return true
+  }
 }
 export const checkAddress = (v: string) => {
   const checkRes = Check.checkAddress(v)
-  if (checkRes === true) return true
+  if (checkRes === true) {
+    reportMatomo('输入框-地址-address', v)
+    return true
+  }
   showToast(checkRes)
 }
 export const checkOut = (formData: Record<string, any>) => {
