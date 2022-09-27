@@ -44,8 +44,5 @@ export default defineConfig({
     alias: {
       "@": "/src"
     }
-  },
-  build: {
-    target: "es2015",
-  },
+  }
 })
