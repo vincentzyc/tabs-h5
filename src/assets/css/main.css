@@ -89,6 +89,20 @@
   color: #666666
 }
 
+.common-popup {
+  max-height: 86vh;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.common-popup .common-wrap {
+  padding: 10px;
+}
+
+.common-popup .agreement-title {
+  color: #cccccc
+}
+
 .agreement-popup {
   height: 86vh;
   width: 90%;
@@ -110,7 +124,7 @@
   line-height: 20px;
 }
 
-.agreement-popup .agreement-confirm{
+.agreement-popup .agreement-confirm {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -120,6 +134,33 @@
   border-top: 1px solid #eee;
   text-align: center;
   line-height: 40px;
+}
+
+.form-wrapper {
+  background: #fff;
+  border-radius: 15px;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+}
+
+.info-text-number {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.info-number {
+  color: #fe4365;
+  font-size: 16px;
+  margin: 0 5px;
+  line-height: 24px;
+}
+
+.info-text {
+  font-size: 12px;
+  color: #666;
+  padding-left: 5px;
+  margin: 5px 0;
 }
 
 @keyframes animte-jump {
