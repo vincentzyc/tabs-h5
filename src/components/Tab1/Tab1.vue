@@ -1,5 +1,6 @@
 <template>
   <SelectNumber @selected="selectNum" showBelongCity showSearchNumber showNumberRule />
+  <MarqueeSingle />
   <img src="@/assets/img/tab1-2.jpg" alt="产品说明" class="widthfull mg-t10" />
   <img src="@/assets/img/tab1-3.jpg" alt="产品说明" class="widthfull" />
   <img alt="产品说明" class="widthfull img4" v-lazy="img4" />

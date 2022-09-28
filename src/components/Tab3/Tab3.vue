@@ -1,6 +1,6 @@
 <template>
   <SelectNumber @selected="selectNum" showBelongCity showSearchNumber :ruleItems="ruleItems" />
-  <Agreement title="填写并提交视为阅读并同意" :agrList="agrList" v-model:checked="checked" />
+  <MarqueeSingle class="mg-b10" />
   <img src="@/assets/img/tab3-2.jpg" alt="产品说明" class="widthfull" />
   <img src="@/assets/img/tab3-3.jpg" alt="产品说明" class="widthfull" />
   <img src="@/assets/img/tab3-4.png" alt="产品说明" class="widthfull" />
