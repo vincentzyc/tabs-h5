@@ -1,4 +1,3 @@
-// import { getUrlParamStr } from '@/utils/business/common';
 import Check from '@/utils/business/form-check';
 import { scrollIntoView } from '@/utils/dom';
 import { initfingerprint2, reportMatomo } from '@/utils/report';
