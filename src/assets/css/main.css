@@ -11,6 +11,10 @@
   margin-top: 10px;
 }
 
+.mg-b10 {
+  margin-bottom: 10px;
+}
+
 .tab-bar-wrap {
   margin: 0;
   padding: 0;
@@ -161,6 +165,49 @@
   color: #666;
   padding-left: 5px;
   margin: 5px 0;
+}
+
+.marquee-single {
+  margin-top: 10px;
+}
+
+.marquee-single .scroll-wrapper {
+  overflow: hidden;
+  padding: 0;
+  width: 300px;
+  height: 50px;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 14px;
+}
+
+.marquee-single .scroll-item {
+  height: 100%;
+  padding: 2px;
+}
+
+.marquee-single .userimg {
+  width: 50px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  background-size: 100% 100%;
+}
+
+.marquee-single .man {
+  background-image: url('@/assets/img/manhead.png');
+}
+
+.marquee-single .woman {
+  background-image: url('@/assets/img/womanhead.png');
+}
+
+.marquee-single .scroll-text {
+  margin-left: 5px;
+}
+
+.marquee-single .anim {
+  transition: all 0.5s linear;
 }
 
 @keyframes animte-jump {
