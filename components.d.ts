@@ -18,7 +18,7 @@ declare module '@vue/runtime-core' {
     FormIDCard: typeof import('./src/components/FormItem/FormIDCard.vue')['default']
     FormName: typeof import('./src/components/FormItem/FormName.vue')['default']
     FormPhone: typeof import('./src/components/FormItem/FormPhone.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    MarqueeSingle: typeof import('./src/components/MarqueeSingle/MarqueeSingle.vue')['default']
     NumberRule: typeof import('./src/components/NumberRule/NumberRule.vue')['default']
     PhoneList: typeof import('./src/components/PhoneList/PhoneList.vue')['default']
     SearchNumber: typeof import('./src/components/SearchNumber/SearchNumber.vue')['default']
