@@ -7,7 +7,6 @@
         @click="handleSelectRule(ruleItem)"
         >{{ ruleItem.label }}</li
       >
-      <li v-for="column in 4"></li>
     </ul>
   </div>
 </template>
