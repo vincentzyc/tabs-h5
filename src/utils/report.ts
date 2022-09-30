@@ -3,7 +3,7 @@ import { getUrlParam } from ".";
 // matomo上报
 export function reportMatomo(title: string, value = '') {
   if (!title) return;
-  const templateId = getUrlParam('id') || '202209271020';
+  const templateId = getUrlParam('id') || 'page1';
   const pid = getUrlParam('pid') || '';
   pid ? window._paq.push(["trackEvent", `${document.title}-${templateId}-${pid}`, title, value])
     : window._paq.push(["trackEvent", `${document.title}-${templateId}`, title, value]);
