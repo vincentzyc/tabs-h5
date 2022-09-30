@@ -15,6 +15,18 @@
   margin-bottom: 10px;
 }
 
+.fs12 {
+  font-size: 12px;
+}
+
+.lh20 {
+  line-height: 20px;
+}
+
+.cccc {
+  color: #cccccc
+}
+
 .tab-bar-wrap {
   margin: 0;
   padding: 0;
@@ -92,6 +104,8 @@
 .agreement-title {
   color: #666666
 }
+
+
 
 .common-popup {
   max-height: 86vh;
