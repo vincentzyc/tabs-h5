@@ -224,6 +224,55 @@
   transition: all 0.5s linear;
 }
 
+.breathlamp {
+  margin-top: 5px;
+  animation-name: animte-breathlamp;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.countdown {
+  margin-top: 10px;
+  color: #333;
+  font-size: 14px;
+  padding: 5px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 100%;
+  background-image: url('@/assets/img/countdown.png');
+}
+
+.countdown-time {
+  padding-left: 50px;
+}
+
+.countdown-colon {
+  color: #fff;
+}
+
+.countdown-timeblock {
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+  background-color: #e6e6e6;
+  font-size: 16px;
+  border-radius: 5px;
+  color: #920000;
+  min-width: 30px;
+  margin: 5px;
+}
+
+@keyframes animte-breathlamp {
+  0%, 50%, 100% {
+    transform: scale(1);
+  }
+
+  25%, 75% {
+    transform: scale(1.2);
+  }
+}
+
 @keyframes animte-jump {
   0% {
     transform: translateY(-3px);
