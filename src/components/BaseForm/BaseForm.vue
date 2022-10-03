@@ -7,6 +7,13 @@
       <FormCity id="addressArr" :locationCity="mainStore.locationCity" v-model="formData.addressArr"></FormCity>
       <FormAddress id="address" v-model="formData.address"></FormAddress>
     </div>
+    <img
+      v-if="animteBtn"
+      src="@/assets/img/button.png"
+      alt="提交按钮"
+      class="breathlamp widthfull"
+      @click="submitOrder()"
+    />
     <van-button
       @click="submitOrder()"
       type="primary"
@@ -14,6 +21,7 @@
       round
       class="submit-button"
       color="linear-gradient(#eb4e4b,#e30023)"
+      v-else
       >立即领取</van-button
     >
   </div>
@@ -37,6 +45,7 @@ const gdtDefaultLink = "https://h5.lipush.com/h5/index.html?id=38045052624285288
 
 const props = defineProps<{
   handleNo?: string;
+  animteBtn?: boolean;
 }>();
 
 const emit = defineEmits<{
