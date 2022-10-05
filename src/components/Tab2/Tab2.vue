@@ -1,6 +1,6 @@
 <template>
   <div class="form-wrapper">
-    <BaseForm @submit="submitOrder" />
+    <BaseForm @submit="submitOrder" animteBtn />
   </div>
   <MarqueeSingle class="mg-b10" />
   <Agreement title="填写并提交视为阅读并同意" :agrList="agrList" v-model:checked="checked" />
