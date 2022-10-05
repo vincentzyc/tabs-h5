@@ -20,7 +20,7 @@ export default defineComponent({
     function getPage() {
       let page = getUrlParam("id");
       if (page === undefined || page === null) {
-        page = "202209271020";
+        page = "page1";
       } else if (typeof page === "string") {
         if (!Object.prototype.hasOwnProperty.call(RouterComponent, page)) page = "404";
       } else {
