@@ -226,6 +226,7 @@ function passVerify() {
     color-stop(0.6, var(--textColor)),
     color-stop(1, var(--textColor))
   );
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-size-adjust: none;
