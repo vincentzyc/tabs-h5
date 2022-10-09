@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     BelongPicker: typeof import('./src/components/BelongPicker/BelongPicker.vue')['default']
     CityPicker: typeof import('./src/components/CityPicker/CityPicker.vue')['default']
     CountDown: typeof import('./src/components/CountDown/CountDown.vue')['default']
+    DragVerify: typeof import('./src/components/DragVerify/DragVerify.vue')['default']
     FormAddress: typeof import('./src/components/FormItem/FormAddress.vue')['default']
     FormCity: typeof import('./src/components/FormItem/FormCity.vue')['default']
     FormIDCard: typeof import('./src/components/FormItem/FormIDCard.vue')['default']
