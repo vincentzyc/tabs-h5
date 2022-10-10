@@ -10,12 +10,7 @@
     @touchend="dragFinish"
   >
     <div class="dv_progress_bar" :class="{ goFirst2: isOk }" ref="progressBar" :style="progressBarStyle"> </div>
-    <div class="dv_text" :style="textStyle" ref="refMessage">
-      <slot name="textBefore" v-if="$slots.textBefore"></slot>
-      {{ message }}
-      <slot name="textAfter" v-if="$slots.textAfter"></slot>
-    </div>
-
+    <div class="dv_text" :style="textStyle" ref="refMessage">{{ message }}</div>
     <div
       class="dv_handler dv_handler_bg"
       :class="{ goFirst: isOk }"
@@ -24,7 +19,24 @@
       ref="handler"
       :style="handlerStyle"
     >
-      <i :class="handlerIcon"></i>
+      <div style="width: 24px; height: 24px">
+        <svg v-if="props.isPassing" viewBox="0 0 1024 1024">
+          <path
+            fill="#76c61d"
+            d="M512 960C264 960 64 759 64 512S264 64 512 64s448 200 448 448S759 960 512 960zM512 128C300 128 128 300 128 512c0 211 172 383 383 383 211 0 383-172 383-383C895 300 723 128 512 128z"
+          ></path>
+          <path
+            fill="#76c61d"
+            d="M726 393c-12-12-32-12-45 0l-233 235-103-106c-12-12-32-12-45-0-12 12-12 32-0 45l126 129c0 0 0 0 0 0 0 0 0 0 0 0 2 1 4 3 6 4 1 0 2 1 3 2 3 1 8 2 12 2 4 0 8-0 11-2 1-0 2-1 3-2 2-1 4-2 6-4 0-0 0-0 0-0 0-0 0-0 0-0l256-259C739 425 739 405 726 393z"
+          ></path>
+        </svg>
+        <svg v-else viewBox="0 0 1027 1024">
+          <path
+            fill="#8a8a8a"
+            d="M189 794c-10 0-20-3-28-11-15-15-15-40 0-56L408 479 160 231c-15-15-15-40 0-56 15-15 40-15 56 0l275 275c7 7 11 17 11 28 0 10-4 20-11 28L217 782C209 790 199 794 189 794zM557 794c-10 0-20-3-28-11-15-15-15-40 0-56l246-246L528 231c-15-15-15-40 0-56 15-15 40-15 56 0l275 275c15 15 15 40 0 56L585 782C578 790 567 794 557 794z"
+          ></path>
+        </svg>
+      </div>
     </div>
   </div>
 </template>
@@ -40,8 +52,6 @@ interface Props {
   completedBg?: string;
   circle?: boolean;
   radius?: string;
-  handlerIcon?: string;
-  successIcon?: string;
   handlerBg?: string;
   textSize?: string;
   textColor?: string;
@@ -50,18 +60,16 @@ const props = withDefaults(defineProps<Props>(), {
   isPassing: false,
   width: 250,
   height: 40,
-  text: "swiping to the right side",
-  successText: "success",
-  background: "#eee",
+  text: "请按住滑块拖动",
+  successText: "验证通过",
+  background: "#ddd",
   progressBarBg: "#76c61d",
   completedBg: "#76c61d",
   circle: false,
   radius: "4px",
-  handlerIcon: "",
-  successIcon: "",
   handlerBg: "#fff",
   textSize: "14px",
-  textColor: "#333",
+  textColor: "#666",
 });
 
 const emit = defineEmits<{
@@ -158,10 +166,10 @@ function dragFinish(e: MouseEvent | TouchEvent) {
 function passVerify() {
   emit("update:isPassing", true);
   isMoving = false;
-  handler.children[0].className = props.successIcon;
+  // handler.children[0].className = props.successIcon;
   progressBar.style.background = props.completedBg;
   refMessage.style.webkitTextFillColor = "unset";
-  refMessage.style.animation = "slidetounlock2 3s infinite";
+  refMessage.style.animation = "slidetounlock2 2s infinite";
   refMessage.style.color = "#fff";
   emit("passcallback");
 }
@@ -192,16 +200,11 @@ function passVerify() {
   top: 0px;
   left: 0px;
   cursor: move;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.drag_verify .dv_handler i {
-  color: #666;
-  padding-left: 0;
-  font-size: 16px;
-}
-.drag_verify .dv_handler .el-icon-circle-check {
-  color: #6c6;
-  margin-top: 9px;
-}
+
 .drag_verify .dv_progress_bar {
   position: absolute;
   height: 34px;
@@ -230,7 +233,7 @@ function passVerify() {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-size-adjust: none;
-  animation: slidetounlock 3s infinite;
+  animation: slidetounlock 2s infinite;
 }
 .drag_verify .dv_text * {
   -webkit-text-fill-color: var(--textColor);
@@ -243,7 +246,6 @@ function passVerify() {
   width: 0px !important;
   transition: width 0.5s;
 }
-
 @keyframes slidetounlock {
   0% {
     background-position: var(--pwidth) 0;
