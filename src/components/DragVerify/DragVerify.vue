@@ -84,6 +84,10 @@ const progressBar = $ref<HTMLDivElement>();
 const handler = $ref<HTMLDivElement>();
 const refMessage = $ref<HTMLDivElement>();
 
+let isMoving = $ref(false);
+let x = $ref(0);
+let isOk = $ref(false);
+
 onMounted(() => {
   const dragEl = dragVerify;
   dragEl.style.setProperty("--textColor", props.textColor);
@@ -118,10 +122,6 @@ const textStyle = $computed(() => ({
   width: props.width + "px",
   fontSize: props.textSize,
 }));
-
-let isMoving = $ref(false);
-let x = $ref(0);
-let isOk = $ref(false);
 
 function dragStart(e: MouseEvent | TouchEvent) {
   e.preventDefault();
@@ -172,20 +172,17 @@ function passVerify() {
   refMessage.style.color = "#fff";
   emit("passcallback");
 }
-// function reset() {
-//   const oriData = $options.data();
-//   for (const key in oriData) {
-//     if (Object.prototype.hasOwnProperty.call(oriData, key)) {
-//       this[key] = oriData[key]
-//     }
-//   }
-//   handler.style.left = "0";
-//   progressBar.style.width = "0";
-//   handler.children[0].className = handlerIcon;
-//   refMessage.style.webkitTextFillColor = "transparent";
-//   refMessage.style.animation = "slidetounlock 3s infinite";
-//   refMessage.style.color = background;
-// }
+function reset() {
+  isMoving = false;
+  x = 0;
+  isOk = false;
+  handler.style.left = "0";
+  progressBar.style.width = "0";
+  refMessage.style.webkitTextFillColor = "transparent";
+  refMessage.style.animation = "slidetounlock 3s infinite";
+  refMessage.style.color = props.background;
+}
+defineExpose({ reset });
 </script>
 <style scoped>
 .drag_verify {
