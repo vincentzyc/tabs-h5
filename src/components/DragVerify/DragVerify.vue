@@ -166,7 +166,6 @@ function dragFinish(e: MouseEvent | TouchEvent) {
 function passVerify() {
   emit("update:isPassing", true);
   isMoving = false;
-  // handler.children[0].className = props.successIcon;
   progressBar.style.background = props.completedBg;
   refMessage.style.webkitTextFillColor = "unset";
   refMessage.style.animation = "slidetounlock2 2s infinite";
@@ -183,7 +182,7 @@ function passVerify() {
 //   handler.style.left = "0";
 //   progressBar.style.width = "0";
 //   handler.children[0].className = handlerIcon;
-//   refMessage.style["-webkit-text-fill-color"] = "transparent";
+//   refMessage.style.webkitTextFillColor = "transparent";
 //   refMessage.style.animation = "slidetounlock 3s infinite";
 //   refMessage.style.color = background;
 // }
