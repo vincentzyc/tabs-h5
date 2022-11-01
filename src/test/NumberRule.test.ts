@@ -30,7 +30,7 @@ test('mount NumberRule component', async () => {
 
   await wrapper.get('.rule-item').trigger('click')
   
-  const incrementEvent = wrapper.emitted('selected')
+  const emitEvent = wrapper.emitted('selected')
 
-  expect(incrementEvent).toHaveLength(1)
+  expect(emitEvent).toHaveLength(1)
 })
