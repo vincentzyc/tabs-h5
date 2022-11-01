@@ -1,0 +1,14 @@
+// Vitest Snapshot v1
+
+exports[`mount MarqueeSingle component 1`] = `
+"<div class=\\"marquee-single flex\\">
+  <ul class=\\"scroll-wrapper\\">
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none man\\"></span><span class=\\"scroll-text txtover\\">李**抢得靓号 1305678****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none man\\"></span><span class=\\"scroll-text txtover\\">蔡**抢得靓号 1308288****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none woman\\"></span><span class=\\"scroll-text txtover\\">张**抢得靓号 1326668****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none woman\\"></span><span class=\\"scroll-text txtover\\">罗**抢得靓号 1665688****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none man\\"></span><span class=\\"scroll-text txtover\\">林**抢得靓号 1556688****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none woman\\"></span><span class=\\"scroll-text txtover\\">周**抢得靓号 1306566****</span></li>
+  </ul>
+</div>"
+`;
