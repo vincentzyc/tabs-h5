@@ -1,0 +1,96 @@
+// Vitest Snapshot v1
+
+exports[`mount PhoneList component 1`] = `
+"<div class=\\"phone-list\\">
+  <ul class=\\"flex flex-wrap space-between\\">
+    <li class=\\"phone-item\\">
+      <div class=\\"flex flex-center flex-column phone-number\\">
+        <p class=\\"num-char\\"><strong>1</strong><strong>7</strong><strong>6</strong><strong style=\\"color: rgb(253, 49, 52);\\">8</strong><strong style=\\"color: rgb(253, 49, 52);\\">8</strong><strong style=\\"color: rgb(253, 49, 52);\\">8</strong><strong>0</strong><strong>5</strong><strong>9</strong><strong>4</strong><strong>2</strong></p>
+        <div class=\\"flex align-middle space-around phone-info\\"><del class=\\"phone-price\\">12528元</del>
+          <p class=\\"phone-text\\">免费领取</p>
+        </div>
+      </div>
+    </li>
+    <li class=\\"phone-item\\">
+      <div class=\\"flex flex-center flex-column phone-number\\">
+        <p class=\\"num-char\\"><strong>1</strong><strong>7</strong><strong>6</strong><strong style=\\"color: rgb(253, 49, 52);\\">8</strong><strong style=\\"color: rgb(253, 49, 52);\\">8</strong><strong style=\\"color: rgb(253, 49, 52);\\">8</strong><strong>0</strong><strong>4</strong><strong>3</strong><strong>4</strong><strong>9</strong></p>
+        <div class=\\"flex align-middle space-around phone-info\\"><del class=\\"phone-price\\">12528元</del>
+          <p class=\\"phone-text\\">免费领取</p>
+        </div>
+      </div>
+    </li>
+    <li class=\\"phone-item\\">
+      <div class=\\"flex flex-center flex-column phone-number\\">
+        <p class=\\"num-char\\"><strong style=\\"color: rgb(253, 49, 52);\\">1</strong><strong style=\\"color: rgb(253, 49, 52);\\">3</strong><strong style=\\"color: rgb(253, 49, 52);\\">2</strong><strong style=\\"color: rgb(253, 49, 52);\\">1</strong><strong style=\\"color: rgb(253, 49, 52);\\">1</strong><strong style=\\"color: rgb(253, 49, 52);\\">1</strong><strong style=\\"color: rgb(253, 49, 52);\\">3</strong><strong style=\\"color: rgb(253, 49, 52);\\">1</strong><strong style=\\"color: rgb(253, 49, 52);\\">1</strong><strong>4</strong><strong>7</strong></p>
+        <div class=\\"flex align-middle space-around phone-info\\"><del class=\\"phone-price\\">11488元</del>
+          <p class=\\"phone-text\\">免费领取</p>
+        </div>
+      </div>
+    </li>
+    <li class=\\"phone-item\\">
+      <div class=\\"flex flex-center flex-column phone-number\\">
+        <p class=\\"num-char\\"><strong>1</strong><strong>3</strong><strong>2</strong><strong>4</strong><strong style=\\"color: rgb(253, 49, 52);\\">9</strong><strong style=\\"color: rgb(253, 49, 52);\\">9</strong><strong style=\\"color: rgb(253, 49, 52);\\">9</strong><strong style=\\"color: rgb(253, 49, 52);\\">3</strong><strong style=\\"color: rgb(253, 49, 52);\\">3</strong><strong>7</strong><strong style=\\"color: rgb(253, 49, 52);\\">8</strong></p>
+        <div class=\\"flex align-middle space-around phone-info\\"><del class=\\"phone-price\\">10678元</del>
+          <p class=\\"phone-text\\">免费领取</p>
+        </div>
+      </div>
+    </li>
+    <li class=\\"phone-item\\">
+      <div class=\\"flex flex-center flex-column phone-number\\">
+        <p class=\\"num-char\\"><strong>1</strong><strong>7</strong><strong>6</strong><strong style=\\"color: rgb(253, 49, 52);\\">8</strong><strong style=\\"color: rgb(253, 49, 52);\\">8</strong><strong style=\\"color: rgb(253, 49, 52);\\">2</strong><strong style=\\"color: rgb(253, 49, 52);\\">2</strong><strong style=\\"color: rgb(253, 49, 52);\\">2</strong><strong>4</strong><strong>0</strong><strong>5</strong></p>
+        <div class=\\"flex align-middle space-around phone-info\\"><del class=\\"phone-price\\">10648元</del>
+          <p class=\\"phone-text\\">免费领取</p>
+        </div>
+      </div>
+    </li>
+    <li class=\\"phone-item\\">
+      <div class=\\"flex flex-center flex-column phone-number\\">
+        <p class=\\"num-char\\"><strong>1</strong><strong>3</strong><strong>1</strong><strong>8</strong><strong>9</strong><strong style=\\"color: rgb(253, 49, 52);\\">6</strong><strong style=\\"color: rgb(253, 49, 52);\\">6</strong><strong style=\\"color: rgb(253, 49, 52);\\">6</strong><strong style=\\"color: rgb(253, 49, 52);\\">4</strong><strong style=\\"color: rgb(253, 49, 52);\\">4</strong><strong style=\\"color: rgb(253, 49, 52);\\">6</strong></p>
+        <div class=\\"flex align-middle space-around phone-info\\"><del class=\\"phone-price\\">9908元</del>
+          <p class=\\"phone-text\\">免费领取</p>
+        </div>
+      </div>
+    </li>
+    <li class=\\"phone-item\\">
+      <div class=\\"flex flex-center flex-column phone-number\\">
+        <p class=\\"num-char\\"><strong>1</strong><strong>8</strong><strong>5</strong><strong style=\\"color: rgb(253, 49, 52);\\">6</strong><strong style=\\"color: rgb(253, 49, 52);\\">6</strong><strong>0</strong><strong style=\\"color: rgb(253, 49, 52);\\">5</strong><strong style=\\"color: rgb(253, 49, 52);\\">5</strong><strong style=\\"color: rgb(253, 49, 52);\\">5</strong><strong>9</strong><strong>6</strong></p>
+        <div class=\\"flex align-middle space-around phone-info\\"><del class=\\"phone-price\\">9848元</del>
+          <p class=\\"phone-text\\">免费领取</p>
+        </div>
+      </div>
+    </li>
+    <li class=\\"phone-item\\">
+      <div class=\\"flex flex-center flex-column phone-number\\">
+        <p class=\\"num-char\\"><strong>1</strong><strong>3</strong><strong>2</strong><strong>4</strong><strong style=\\"color: rgb(253, 49, 52);\\">9</strong><strong style=\\"color: rgb(253, 49, 52);\\">9</strong><strong style=\\"color: rgb(253, 49, 52);\\">9</strong><strong style=\\"color: rgb(253, 49, 52);\\">4</strong><strong style=\\"color: rgb(253, 49, 52);\\">4</strong><strong style=\\"color: rgb(253, 49, 52);\\">7</strong><strong style=\\"color: rgb(253, 49, 52);\\">4</strong></p>
+        <div class=\\"flex align-middle space-around phone-info\\"><del class=\\"phone-price\\">9808元</del>
+          <p class=\\"phone-text\\">免费领取</p>
+        </div>
+      </div>
+    </li>
+    <li class=\\"phone-item\\">
+      <div class=\\"flex flex-center flex-column phone-number\\">
+        <p class=\\"num-char\\"><strong>1</strong><strong>3</strong><strong>2</strong><strong>4</strong><strong style=\\"color: rgb(253, 49, 52);\\">9</strong><strong style=\\"color: rgb(253, 49, 52);\\">9</strong><strong style=\\"color: rgb(253, 49, 52);\\">9</strong><strong style=\\"color: rgb(253, 49, 52);\\">3</strong><strong style=\\"color: rgb(253, 49, 52);\\">3</strong><strong>8</strong><strong>5</strong></p>
+        <div class=\\"flex align-middle space-around phone-info\\"><del class=\\"phone-price\\">9678元</del>
+          <p class=\\"phone-text\\">免费领取</p>
+        </div>
+      </div>
+    </li>
+    <li class=\\"phone-item\\">
+      <div class=\\"flex flex-center flex-column phone-number\\">
+        <p class=\\"num-char\\"><strong>1</strong><strong>3</strong><strong>1</strong><strong>9</strong><strong>2</strong><strong style=\\"color: rgb(253, 49, 52);\\">6</strong><strong style=\\"color: rgb(253, 49, 52);\\">6</strong><strong style=\\"color: rgb(253, 49, 52);\\">6</strong><strong style=\\"color: rgb(253, 49, 52);\\">4</strong><strong style=\\"color: rgb(253, 49, 52);\\">4</strong><strong>9</strong></p>
+        <div class=\\"flex align-middle space-around phone-info\\"><del class=\\"phone-price\\">9608元</del>
+          <p class=\\"phone-text\\">免费领取</p>
+        </div>
+      </div>
+    </li>
+    <li class=\\"phone-item\\">
+      <div class=\\"flex flex-center flex-column phone-number\\">
+        <p class=\\"num-char\\"><strong>1</strong><strong>3</strong><strong>2</strong><strong>4</strong><strong style=\\"color: rgb(253, 49, 52);\\">9</strong><strong style=\\"color: rgb(253, 49, 52);\\">9</strong><strong style=\\"color: rgb(253, 49, 52);\\">9</strong><strong style=\\"color: rgb(253, 49, 52);\\">3</strong><strong style=\\"color: rgb(253, 49, 52);\\">3</strong><strong>6</strong><strong>9</strong></p>
+        <div class=\\"flex align-middle space-around phone-info\\"><del class=\\"phone-price\\">9558元</del>
+          <p class=\\"phone-text\\">免费领取</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>"
+`;
