@@ -1,0 +1,16 @@
+// Vitest Snapshot v1
+
+exports[`mount CountDown component 1`] = `
+"<div class=\\"countdown\\">
+  <p class=\\"flex flex-center\\">
+  <div role=\\"timer\\" class=\\"van-count-down countdown-time flex-inline align-middle\\">
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if--><span class=\\"countdown-timeblock\\">00</span><span class=\\"countdown-colon\\">秒</span>
+  </div>
+  </p>
+</div>"
+`;
