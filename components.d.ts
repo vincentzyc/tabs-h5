@@ -35,5 +35,6 @@ declare module '@vue/runtime-core' {
     Tabs: typeof import('./src/components/Tabs/Tabs.vue')['default']
     TabsPage2: typeof import('./src/components/TabsPage2/TabsPage2.vue')['default']
     TogglePage: typeof import('./src/components/TogglePage/TogglePage.vue')['default']
+    VanCountDown: typeof import('vant/es')['CountDown']
   }
 }
