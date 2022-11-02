@@ -1,0 +1,13 @@
+// Vitest Snapshot v1
+
+exports[`mount Agreement component 1`] = `
+"<div role=\\"checkbox\\" class=\\"van-checkbox van-checkbox--label-disabled\\" tabindex=\\"0\\" aria-checked=\\"false\\">
+  <div class=\\"van-checkbox__icon van-checkbox__icon--round\\" style=\\"font-size: 14px;\\"><i class=\\"van-badge__wrapper van-icon van-icon-success\\">
+      <!---->
+      <!---->
+      <!---->
+    </i></div><span class=\\"van-checkbox__label\\"><p class=\\"agreement-text\\"><span>填写并提交视为阅读并同意</span><span><!--v-if--><span class=\\"agreement-title\\">《个人信息保护政策》</span></span><span><span>和</span><span class=\\"agreement-title\\">《入网许可协议》</span></span><span><span>和</span><span class=\\"agreement-title\\">《单独同意书》</span></span></p></span>
+</div>
+<!--teleport start-->
+<!--teleport end-->"
+`;
