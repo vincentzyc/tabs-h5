@@ -26,13 +26,7 @@ test('mount Agreement component', async () => {
   })
 
   expect(wrapper.html()).toMatchSnapshot()
-  // const ruleItemsLength = wrapper.props().ruleItems.length
+  const listLength = wrapper.props().agrList.length
 
-  // expect(wrapper.findAll('.rule-item')).toHaveLength(ruleItemsLength)
-
-  // await wrapper.get('.rule-item').trigger('click')
-
-  // const emitEvent = wrapper.emitted('selected')
-
-  // expect(emitEvent).toHaveLength(1)
+  expect(wrapper.findAll('.agreement-title')).toHaveLength(listLength)
 })
