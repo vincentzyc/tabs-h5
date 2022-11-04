@@ -1,0 +1,6 @@
+// Vitest Snapshot v1
+
+exports[`mount AgreementPopup component 1`] = `
+"<!--teleport start-->
+<!--teleport end-->"
+`;
