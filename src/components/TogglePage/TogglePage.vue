@@ -3,7 +3,7 @@
     <div class="flex flex-center">
       <van-button
         @click="getPrePage()"
-        class="change-button"
+        class="change-button pre-button"
         icon="arrow-left"
         round
         type="primary"
@@ -12,7 +12,7 @@
       >
       <van-button
         @click="getNextPage()"
-        class="change-button"
+        class="change-button next-button"
         icon="arrow"
         icon-position="right"
         loading-text="下一页"
