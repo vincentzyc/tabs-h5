@@ -10,10 +10,5 @@ test('mount TogglePage component', async () => {
       nextLoading:false
     },
   })
-
-  await wrapper.get('.change-button').trigger('click')
-  
-  const emitEvent = wrapper.emitted('prepage')
-
-  expect(emitEvent).toHaveLength(1)
+  expect(wrapper.html()).toMatchSnapshot()
 })
