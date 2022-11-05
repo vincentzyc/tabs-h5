@@ -1,0 +1,23 @@
+// Vitest Snapshot v1
+
+exports[`mount TogglePage component 1`] = `
+"<div class=\\"change-button-wrap\\">
+  <div class=\\"flex flex-center\\"><button type=\\"button\\" class=\\"van-button van-button--primary van-button--normal van-button--round van-button--disabled change-button pre-button\\" disabled=\\"\\">
+      <div class=\\"van-button__content\\"><i class=\\"van-badge__wrapper van-icon van-icon-arrow-left van-button__icon\\">
+          <!---->
+          <!---->
+          <!---->
+        </i><span class=\\"van-button__text\\">上一页</span>
+        <!---->
+      </div>
+    </button><button type=\\"button\\" class=\\"van-button van-button--primary van-button--normal van-button--round change-button next-button\\">
+      <div class=\\"van-button__content\\">
+        <!----><span class=\\"van-button__text\\">下一页</span><i class=\\"van-badge__wrapper van-icon van-icon-arrow van-button__icon\\">
+          <!---->
+          <!---->
+          <!---->
+        </i>
+      </div>
+    </button></div>
+</div>"
+`;
