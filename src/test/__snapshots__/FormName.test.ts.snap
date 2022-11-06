@@ -1,0 +1,8 @@
+// Vitest Snapshot v1
+
+exports[`mount FormName component 1`] = `
+"<div class=\\"flex align-middle form-item\\">
+  <div class=\\"form-label\\">领卡姓名</div>
+  <div class=\\"form-input flex flex-auto align-middle\\"><input maxlength=\\"15\\" placeholder=\\"输入办理人姓名（已加密）\\" type=\\"text\\"></div>
+</div>"
+`;
