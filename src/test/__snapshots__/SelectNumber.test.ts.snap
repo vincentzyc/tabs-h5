@@ -1,0 +1,32 @@
+// Vitest Snapshot v1
+
+exports[`mount SelectNumber component 1`] = `
+"<div class=\\"select-number-wrapper\\">
+  <div class=\\"search-number-wrapper\\">
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
+  </div>
+  <div class=\\"empty-tip\\"> 哎呦，没有适合您的号码！ <p><small style=\\"color: rgb(204, 204, 204);\\">建议缩短号码字数，例如：88</small></p>
+  </div>
+  <div class=\\"change-button-wrap\\" style=\\"display: none;\\">
+    <div class=\\"flex flex-center\\"><button type=\\"button\\" class=\\"van-button van-button--primary van-button--normal van-button--round van-button--disabled change-button pre-button\\" disabled=\\"\\">
+        <div class=\\"van-button__content\\"><i class=\\"van-badge__wrapper van-icon van-icon-arrow-left van-button__icon\\">
+            <!---->
+            <!---->
+            <!---->
+          </i><span class=\\"van-button__text\\">上一页</span>
+          <!---->
+        </div>
+      </button><button type=\\"button\\" class=\\"van-button van-button--primary van-button--normal van-button--round change-button next-button\\">
+        <div class=\\"van-button__content\\">
+          <!----><span class=\\"van-button__text\\">下一页</span><i class=\\"van-badge__wrapper van-icon van-icon-arrow van-button__icon\\">
+            <!---->
+            <!---->
+            <!---->
+          </i>
+        </div>
+      </button></div>
+  </div>
+</div>"
+`;
