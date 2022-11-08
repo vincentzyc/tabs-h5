@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@pinia/testing': ^0.0.14
   '@vant/touch-emulator': ^1.4.0
   '@vitejs/plugin-legacy': ^2.2.0
   '@vitejs/plugin-vue': ^3.1.0
@@ -30,6 +31,7 @@ dependencies:
   vue: 3.2.39
 
 devDependencies:
+  '@pinia/testing': 0.0.14_pinia@2.0.22+vue@3.2.39
   '@vitejs/plugin-legacy': 2.2.0_terser@5.15.0+vite@3.1.2
   '@vitejs/plugin-vue': 3.1.0_vite@3.1.2+vue@3.2.39
   '@vue/test-utils': 2.0.2_vue@3.2.39
@@ -160,6 +162,18 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: true
+
+  /@pinia/testing/0.0.14_pinia@2.0.22+vue@3.2.39:
+    resolution: {integrity: sha512-ZmZwVNd/NnKYLIfjfuKl0zlJ3UdiXFpsHzSlL6wCeezSlyrqGMxsIQKv0J6fleu38gyCNTPBEipfxrt8V4+VIg==}
+    peerDependencies:
+      pinia: '>=2.0.19'
+    dependencies:
+      pinia: 2.0.22_arz4dztosvwy2ghjrlh2wdhejm
+      vue-demi: 0.13.11_vue@3.2.39
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
     dev: true
 
   /@rollup/pluginutils/4.2.1:
@@ -306,7 +320,6 @@ packages:
 
   /@vue/devtools-api/6.2.1:
     resolution: {integrity: sha512-OEgAMeQXvCoJ+1x8WyQuVZzFo0wcyCmUR3baRVLmKBo1LmYZWMlRiXlux5jd0fqVJu6PfDbOrZItVqUEzLobeQ==}
-    dev: false
 
   /@vue/reactivity-transform/3.2.39:
     resolution: {integrity: sha512-HGuWu864zStiWs9wBC6JYOP1E00UjMdDWIG5W+FpUx28hV3uz9ODOKVNm/vdOy/Pvzg8+OcANxAVC85WFBbl3A==}
@@ -1281,7 +1294,6 @@ packages:
       typescript: 4.8.3
       vue: 3.2.39
       vue-demi: 0.13.11_vue@3.2.39
-    dev: false
 
   /pkg-types/0.3.5:
     resolution: {integrity: sha512-VkxCBFVgQhNHYk9subx+HOhZ4jzynH11ah63LZsprTKwPCWG9pfWBlkElWFbvkP9BVR0dP1jS9xPdhaHQNK74Q==}
@@ -1756,7 +1768,6 @@ packages:
         optional: true
     dependencies:
       vue: 3.2.39
-    dev: false
 
   /vue-tsc/0.40.13_typescript@4.8.3:
     resolution: {integrity: sha512-xzuN3g5PnKfJcNrLv4+mAjteMd5wLm5fRhW0034OfNJZY4WhB07vhngea/XeGn7wNYt16r7syonzvW/54dcNiA==}
