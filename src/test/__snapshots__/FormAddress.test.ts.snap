@@ -1,0 +1,8 @@
+// Vitest Snapshot v1
+
+exports[`mount FormAddress component 1`] = `
+"<div class=\\"flex align-middle form-item border-bnone\\">
+  <div class=\\"form-label\\">详细地址</div>
+  <div class=\\"form-input flex-auto flex align-middle\\"><input maxlength=\\"50\\" placeholder=\\"街道/镇+村/小区/楼+门牌号\\" type=\\"text\\"></div>
+</div>"
+`;
