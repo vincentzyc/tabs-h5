@@ -6,13 +6,16 @@ test('mount FormName component', async () => {
 
   const wrapper = mount(FormName, {
     props: {
-      modelValue: ''
+      modelValue: '',
+      'onUpdate:modelValue': (e: string) => wrapper.setProps({ modelValue: e })
     }
   })
 
   expect(wrapper.html()).toMatchSnapshot()
 
   await wrapper.get('input').setValue('测试姓名')
+
+  expect(wrapper.props('modelValue')).toBe('测试姓名')
 
   const emitEvent = wrapper.emitted('update:modelValue')
 
