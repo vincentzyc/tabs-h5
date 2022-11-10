@@ -1,0 +1,8 @@
+// Vitest Snapshot v1
+
+exports[`mount FormIDCard component 1`] = `
+"<div class=\\"flex align-middle form-item\\">
+  <div class=\\"form-label\\">身份证号</div>
+  <div class=\\"form-input flex-auto flex align-middle\\"><input maxlength=\\"18\\" placeholder=\\"输入办理人身份证（已加密）\\" type=\\"text\\"></div>
+</div>"
+`;
