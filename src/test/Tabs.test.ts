@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { Lazyload } from 'vant';
 import { createTestingPinia } from '@pinia/testing'
 import Tabs from '@/components/Tabs/Tabs.vue'
 
@@ -8,7 +9,10 @@ test('mount Tabs component', async () => {
   const wrapper = mount(Tabs, {
     global: {
       plugins: [createTestingPinia()],
+      directives: {
+        lazy: Lazyload
+      }
     },
   })
-  // expect(wrapper.html()).toMatchSnapshot()
+  expect(wrapper.html()).toMatchSnapshot()
 })
