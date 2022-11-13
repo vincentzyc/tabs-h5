@@ -1,0 +1,55 @@
+// Vitest Snapshot v1
+
+exports[`mount Tab2 component 1`] = `
+"<div class=\\"form-wrapper\\">
+  <div class=\\"form-wrap\\">
+    <div class=\\"flex align-middle form-item\\" id=\\"custName\\">
+      <div class=\\"form-label\\">领卡姓名</div>
+      <div class=\\"form-input flex flex-auto align-middle\\"><input maxlength=\\"15\\" placeholder=\\"输入办理人姓名（已加密）\\" type=\\"text\\"></div>
+    </div>
+    <div class=\\"flex align-middle form-item\\" id=\\"contactNumber\\">
+      <div class=\\"form-label\\">联系电话</div>
+      <div class=\\"form-input flex-auto flex align-middle\\"><input maxlength=\\"11\\" placeholder=\\"输入有效联系电话并保持畅通\\" type=\\"tel\\"></div>
+    </div>
+    <div style=\\"display: none;\\">
+      <div class=\\"flex align-middle form-item\\" id=\\"idCardNo\\">
+        <div class=\\"form-label\\">身份证号</div>
+        <div class=\\"form-input flex-auto flex align-middle\\"><input maxlength=\\"18\\" placeholder=\\"输入办理人身份证（已加密）\\" type=\\"text\\"></div>
+      </div>
+      <!---->
+      <div class=\\"flex align-middle form-item border-bnone\\" id=\\"address\\">
+        <div class=\\"form-label\\">详细地址</div>
+        <div class=\\"form-input flex-auto flex align-middle\\"><input maxlength=\\"50\\" placeholder=\\"街道/镇+村/小区/楼+门牌号\\" type=\\"text\\"></div>
+      </div>
+    </div><img src=\\"/src/assets/img/button.png\\" alt=\\"提交按钮\\" class=\\"breathlamp widthfull\\">
+  </div>
+</div>
+<div class=\\"marquee-single flex mg-b10\\">
+  <ul class=\\"scroll-wrapper\\">
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none man\\"></span><span class=\\"scroll-text txtover\\">李**抢得靓号 1305678****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none man\\"></span><span class=\\"scroll-text txtover\\">蔡**抢得靓号 1308288****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none woman\\"></span><span class=\\"scroll-text txtover\\">张**抢得靓号 1326668****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none woman\\"></span><span class=\\"scroll-text txtover\\">罗**抢得靓号 1665688****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none man\\"></span><span class=\\"scroll-text txtover\\">林**抢得靓号 1556688****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none woman\\"></span><span class=\\"scroll-text txtover\\">周**抢得靓号 1306566****</span></li>
+  </ul>
+</div>
+<div role=\\"checkbox\\" class=\\"van-checkbox van-checkbox--label-disabled\\" tabindex=\\"0\\" aria-checked=\\"true\\">
+  <div class=\\"van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked\\" style=\\"font-size: 14px;\\"><i class=\\"van-badge__wrapper van-icon van-icon-success\\" style=\\"border-color: #cccccc; background-color: rgb(204, 204, 204);\\">
+      <!---->
+      <!---->
+      <!---->
+    </i></div><span class=\\"van-checkbox__label\\"><p class=\\"agreement-text\\"><span>填写并提交视为阅读并同意</span><span><!--v-if--><span class=\\"agreement-title\\">《个人信息保护政策》</span></span><span><span>和</span><span class=\\"agreement-title\\">《入网许可协议》</span></span><span><span>和</span><span class=\\"agreement-title\\">《单独同意书》</span></span></p></span>
+</div>
+<!--teleport start-->
+<!--teleport end-->
+<img src=\\"/src/assets/img/tab2-2.jpg\\" alt=\\"产品说明\\" class=\\"widthfull\\">
+<img src=\\"/src/assets/img/tab2-3.jpg\\" alt=\\"产品说明\\" class=\\"widthfull\\">
+<div class=\\"text-center expenses-wrap\\"><span class=\\"expenses-text\\">资费详情说明</span></div>
+<transition-stub role=\\"button\\" tabindex=\\"0\\">
+  <!---->
+</transition-stub>
+<transition-stub>
+  <!---->
+</transition-stub>"
+`;
