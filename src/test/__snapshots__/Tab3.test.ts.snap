@@ -1,0 +1,87 @@
+// Vitest Snapshot v1
+
+exports[`mount Tab3 component 1`] = `
+"<div class=\\"select-number-wrapper\\">
+  <div class=\\"search-number-wrapper\\">
+    <div class=\\"flex align-middle select-city\\"><span class=\\"city-tip relative flex-none\\">归属地(可选择)</span><span class=\\"city-text flex-auto\\">请选择归属地</span><svg class=\\"location-icon flex-none\\" height=\\"20\\" p-id=\\"1792\\" viewBox=\\"0 0 1024 1024\\" width=\\"20\\">
+        <path d=\\"M512.103132 320.120979a106.221743 106.221743 0 1 1-75.507022 31.354611A106.221743 106.221743 0 0 1 512.103132 320.120979m0-63.989002a170.850635 170.850635 0 1 0 120.939214 49.911422A169.570855 169.570855 0 0 0 512.103132 256.131977z\\" fill=\\"#999999\\"></path>
+        <path d=\\"M805.172761 124.314633a407.609942 407.609942 0 0 0-586.139257 0 431.285873 431.285873 0 0 0 0 599.576948L512.103132 1024l293.069629-300.108419a431.285873 431.285873 0 0 0 0-599.576948z m-44.152411 557.344207l-248.917218 255.956007-248.917217-255.956007a365.377201 365.377201 0 0 1 0-508.712565 346.82039 346.82039 0 0 1 497.834435 0 365.377201 365.377201 0 0 1 0 508.712565z\\" fill=\\"#999999\\"></path>
+      </svg></div>
+    <transition-stub>
+      <!---->
+    </transition-stub>
+    <transition-stub>
+      <div role=\\"dialog\\" tabindex=\\"0\\" class=\\"van-popup van-popup--bottom\\" style=\\"display: none;\\">
+        <div class=\\"van-picker\\">
+          <div class=\\"van-picker__toolbar\\"><button type=\\"button\\" class=\\"van-picker__cancel van-haptics-feedback\\">取消</button>
+            <div class=\\"van-picker__title van-ellipsis\\">请选择</div><button type=\\"button\\" class=\\"van-picker__confirm van-haptics-feedback\\">确认</button>
+          </div>
+          <!---->
+          <!---->
+          <div class=\\"van-picker__columns\\" style=\\"height: 540px;\\">
+            <div class=\\"van-picker-column\\">
+              <ul style=\\"transform: translate3d(0, 252px, 0); transition-duration: 0ms; transition-property: none;\\" class=\\"van-picker-column__wrapper\\"></ul>
+            </div>
+            <!---->
+          </div>
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </transition-stub>
+    <div class=\\"relative flex input-search-wrap\\"><svg class=\\"search-icon\\" viewBox=\\"0 0 1024 1024\\">
+        <path d=\\"M910.933333 881.066667l-186.026666-186.026667a339.626667 339.626667 0 0 0 85.333333-225.28c0-188.586667-152.746667-341.333333-341.333333-341.333333s-341.333333 152.746667-341.333334 341.333333 152.746667 341.333333 341.333334 341.333333c86.613333 0 165.546667-32.426667 225.706666-85.76l186.026667 186.026667 30.293333-30.293333zM170.24 469.76c0-164.693333 133.973333-298.666667 298.666667-298.666667s298.666667 133.973333 298.666666 298.666667-133.973333 298.666667-298.666666 298.666667-298.666667-134.4-298.666667-298.666667z\\" fill=\\"#bfbfbf\\"></path>
+      </svg><input placeholder=\\"请输入您喜欢的数字\\" class=\\"input-search flex-auto\\" maxlength=\\"8\\" type=\\"text\\">
+      <div class=\\"search-button flex-none fs14\\">搜索</div>
+    </div>
+    <!--v-if-->
+  </div>
+  <div class=\\"empty-tip\\"> 哎呦，没有适合您的号码！ <p><small style=\\"color: rgb(204, 204, 204);\\">建议缩短号码字数，例如：88</small></p>
+  </div>
+  <div class=\\"change-button-wrap\\" style=\\"display: none;\\">
+    <div class=\\"flex flex-center\\"><button type=\\"button\\" class=\\"van-button van-button--primary van-button--normal van-button--round van-button--disabled change-button pre-button\\" disabled=\\"\\">
+        <div class=\\"van-button__content\\"><i class=\\"van-badge__wrapper van-icon van-icon-arrow-left van-button__icon\\">
+            <!---->
+            <!---->
+            <!---->
+          </i><span class=\\"van-button__text\\">上一页</span>
+          <!---->
+        </div>
+      </button><button type=\\"button\\" class=\\"van-button van-button--primary van-button--normal van-button--round change-button next-button\\">
+        <div class=\\"van-button__content\\">
+          <!----><span class=\\"van-button__text\\">下一页</span><i class=\\"van-badge__wrapper van-icon van-icon-arrow van-button__icon\\">
+            <!---->
+            <!---->
+            <!---->
+          </i>
+        </div>
+      </button></div>
+  </div>
+</div>
+<div class=\\"marquee-single flex mg-b10\\">
+  <ul class=\\"scroll-wrapper\\">
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none man\\"></span><span class=\\"scroll-text txtover\\">李**抢得靓号 1305678****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none man\\"></span><span class=\\"scroll-text txtover\\">蔡**抢得靓号 1308288****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none woman\\"></span><span class=\\"scroll-text txtover\\">张**抢得靓号 1326668****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none woman\\"></span><span class=\\"scroll-text txtover\\">罗**抢得靓号 1665688****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none man\\"></span><span class=\\"scroll-text txtover\\">林**抢得靓号 1556688****</span></li>
+    <li class=\\"flex align-middle scroll-item\\"><span class=\\"userimg flex-none woman\\"></span><span class=\\"scroll-text txtover\\">周**抢得靓号 1306566****</span></li>
+  </ul>
+</div>
+<img src=\\"/src/assets/img/tab3-2.jpg\\" alt=\\"产品说明\\" class=\\"widthfull\\">
+<img src=\\"/src/assets/img/tab3-3.jpg\\" alt=\\"产品说明\\" class=\\"widthfull\\">
+<p class=\\"fs12 cccc lh20\\"> 温馨提醒： 个人擅自买卖实名电话卡属违法行为，请勿将号卡租借、贩卖给他人，如被他人利用发生非法违规行为，您将承担相应法律责任，请您确保规范使用您的号码。查看详情&gt;&gt;&gt; </p>
+<img src=\\"/src/assets/img/tab3-4.png\\" alt=\\"产品说明\\" class=\\"widthfull\\">
+<div class=\\"text-center expenses-wrap\\"><span class=\\"expenses-text\\">资费详情说明</span></div>
+<!--teleport start-->
+<!--teleport end-->
+<transition-stub role=\\"button\\" tabindex=\\"0\\">
+  <!---->
+</transition-stub>
+<transition-stub>
+  <!---->
+</transition-stub>
+<!--teleport start-->
+<!--teleport end-->"
+`;
