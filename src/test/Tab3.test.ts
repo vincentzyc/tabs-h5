@@ -17,4 +17,10 @@ test('mount Tab3 component', async () => {
     },
   })
   expect(wrapper.html()).toMatchSnapshot()
+  
+  await wrapper.get('.expenses-text').trigger('click')
+
+  await nextTick()
+
+  expect(wrapper.find('.agreement-popup').exists()).toBe(true)
 })
