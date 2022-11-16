@@ -12,12 +12,4 @@ test('mount FormCity component', async () => {
   })
 
   expect(wrapper.html()).toMatchSnapshot()
-
-  // await wrapper.get('input').setValue('测试姓名')
-
-  // expect(wrapper.props('modelValue')).toBe('测试姓名')
-
-  // const emitEvent = wrapper.emitted('update:modelValue')
-
-  // expect(emitEvent).toHaveLength(1)
 })
