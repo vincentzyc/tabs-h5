@@ -17,7 +17,7 @@ specifiers:
   typescript: ^4.6.4
   unplugin-auto-import: ^0.11.2
   unplugin-vue-components: ^0.22.7
-  vant: 4.0.0-rc.3
+  vant: ^4.0.2
   vite: ^3.1.0
   vitest: ^0.23.4
   vue: ^3.2.37
@@ -27,7 +27,7 @@ dependencies:
   '@vant/touch-emulator': 1.4.0
   axios: 0.27.2
   pinia: 2.0.22_arz4dztosvwy2ghjrlh2wdhejm
-  vant: 4.0.0-rc.3_vue@3.2.39
+  vant: 4.0.2_vue@3.2.39
   vue: 3.2.39
 
 devDependencies:
@@ -203,10 +203,6 @@ packages:
     resolution: {integrity: sha512-m+6nTEOadJZuTPkKR/SYK3A2d7FZrgElol9UP1Kae90VVU4a6mxnPuLiIW1m4Cq4gZ/nWb9GrdVXJCoCazDAbg==}
     dev: true
 
-  /@vant/icons/1.8.0:
-    resolution: {integrity: sha512-sKfEUo2/CkQFuERxvkuF6mGQZDKu3IQdj5rV9Fm0weJXtchDSSQ+zt8qPCNUEhh9Y8shy5PzxbvAfOOkCwlCXg==}
-    dev: false
-
   /@vant/popperjs/1.3.0:
     resolution: {integrity: sha512-hB+czUG+aHtjhaEmCJDuXOep0YTZjdlRR+4MSmIFnkCQIxJaXLQdSsR90XWvAI2yvKUI7TCGqR8pQg2RtvkMHw==}
     dev: false
@@ -215,8 +211,8 @@ packages:
     resolution: {integrity: sha512-Zt+zISV0+wpOew2S1siOJ3G22y+hapHAKmXM+FhpvWzsRc4qahaYXatCAITuuXt0EcDp7WvEeTO4F7p9AtX/pw==}
     dev: false
 
-  /@vant/use/1.4.2:
-    resolution: {integrity: sha512-+30mOa/FY26qk8Ag/Cmqb51JaOgE9rS1xDS24yDx4aHixMhTZH2QsuFGrQVPEazkeK8R+p14oW28kK3146Gtbg==}
+  /@vant/use/1.4.3:
+    resolution: {integrity: sha512-rSnETN7P9qT1WbItMpQxBqe3cHeK2ZFYp1sCxWUXaTeI71TqA8sOdzC36ledZ36NQgFNTch9fsRPYOkrCgZfQA==}
     dev: false
 
   /@vitejs/plugin-legacy/2.2.0_terser@5.15.0+vite@3.1.2:
@@ -1673,14 +1669,13 @@ packages:
       requires-port: 1.0.0
     dev: true
 
-  /vant/4.0.0-rc.3_vue@3.2.39:
-    resolution: {integrity: sha512-FC59rHwQO2ihjzAIZ2ZybRG4hTw/10SuUJIAlRLFEhceIoFcqDJqDPKQNB8gQp5mN8+A0UUxqO29W7fig+uxiw==}
+  /vant/4.0.2_vue@3.2.39:
+    resolution: {integrity: sha512-qv3YaysqDbDI4N1peuck0v2g/Zz2rH2ao2qLNn166ZsuPadCmwsuwaypT+eFWElAzj0P1f9aUEmFmdJJwGuRfw==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
-      '@vant/icons': 1.8.0
       '@vant/popperjs': 1.3.0
-      '@vant/use': 1.4.2
+      '@vant/use': 1.4.3
       vue: 3.2.39
     dev: false
 
