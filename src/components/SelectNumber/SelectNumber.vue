@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import { PageIdLocation, TypeNumItem } from "@/api/types/common";
-import "./css/index.styl";
+import "./css/index.less";
 import { useMainStore } from "@/pinia";
 import { CommonApi } from "@/api";
 import { closeLoading, openLoading } from "@/utils/loading";

@@ -36,6 +36,7 @@ import { CommonApi } from "@/api";
 import { checkOut } from "@/composition/business/use-verify-data";
 import { reportMatomo } from "@/utils/report";
 import { PageIdLocation } from "@/api/types/common";
+import './style.less';
 
 const FormCity = defineAsyncComponent(() => import("@/components/FormItem/FormCity.vue"));
 
@@ -157,7 +158,3 @@ function updateAllCjData(newRes: PageIdLocation) {
   mainStore.setCjData(mainStore.cjData);
 }
 </script>
-
-<style lang="stylus">
-@import './style.styl';
-</style>
