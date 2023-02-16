@@ -1,23 +1,23 @@
-$white = #fff;
-$black = #000;
-$gold = #ffd978;
-$gold-d = #fbbf52;
-$gold-s = #fade94;
-$red = #ff0000;
-$gray = #666;
-$gray-s = #999;
-$gray-ss = #ccc;
+@white: #fff;
+@black: #000;
+@gold: #ffd978;
+@gold-d: #fbbf52;
+@gold-s: #fade94;
+@red: #ff0000;
+@gray: #666;
+@gray-s: #999;
+@gray-ss: #ccc;
 
 .select-number-wrapper {
   .search-number-wrapper {
     padding: 12px;
     border-radius: 10px;
-    background-color: $white;
+    background-color: @white;
   }
 
   .select-city {
     width: 100%;
-    border: 1px solid $gold;
+    border: 1px solid @gold;
     border-radius: 8px;
     font-size: 14px;
     padding: 10px;
@@ -29,11 +29,11 @@ $gray-ss = #ccc;
   }
 
   .city-tip::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 8px;
     border: 6px solid transparent;
-    border-top-color: $gold;
+    border-top-color: @gold;
     right: -18px;
   }
 
@@ -45,7 +45,7 @@ $gray-ss = #ccc;
   }
 
   .input-search-wrap {
-    border: 1px solid $gold;
+    border: 1px solid @gold;
     border-radius: 10px;
   }
 
@@ -53,7 +53,7 @@ $gray-ss = #ccc;
     margin-top: 5px;
     border-radius: 8px;
     overflow: hidden;
-    color: $white;
+    color: @white;
     font-size: 14px;
     line-height: 1;
 
@@ -61,25 +61,25 @@ $gray-ss = #ccc;
       text-align: center;
       width: 24%;
       padding: 12px 0;
-      border: 1px solid $gold;
+      border: 1px solid @gold;
       border-radius: 20px;
       margin-top: 5px;
       transition: 0.3s;
       word-break: break-all;
-      color: $black;
-      background-color: $gold-d;
+      color: @black;
+      background-color: @gold-d;
       font-size: 14px;
       font-weight: 400;
 
       &.active {
-        color: $white;
+        color: @white;
       }
     }
   }
 
   .search-button {
     padding: 0 20px 0 24px;
-    background-color: $gold-s;
+    background-color: @gold-s;
     background-image: linear-gradient(to right, #f1e5bb, #ffdb85);
     border-radius: 10px;
     line-height: 40px;
@@ -94,36 +94,35 @@ $gray-ss = #ccc;
     top: 10px;
     left: 10px;
     width: 20px;
-    color: $gray-ss;
+    color: @gray-ss;
     font-size: 20px;
   }
 
   .input-search {
     padding-left: 40px;
-    -webkit-appearance: none;
     background-color: transparent;
     box-sizing: border-box;
     border: none;
-    color: $black;
+    color: @black;
     font-size: 14px;
     height: 40px;
     line-height: 40px;
     outline: none;
 
     &::-webkit-input-placeholder {
-      color: $gray !important;
+      color: @gray !important;
     }
 
     &::-moz-placeholder {
-      color: $gray !important;
+      color: @gray !important;
     }
 
     &:-moz-placeholder {
-      color: $gray !important;
+      color: @gray !important;
     }
 
     &:-ms-input-placeholder {
-      color: $gray !important;
+      color: @gray !important;
     }
   }
 
@@ -140,29 +139,29 @@ $gray-ss = #ccc;
   .phone-number {
     position: relative;
     font-size: 22px;
-    color: $white;
-    border: 1px solid $gold;
+    color: @white;
+    border: 1px solid @gold;
     min-width: 136px;
     border-radius: 10px;
     height: 56px;
     line-height: 32px;
     margin: 5px;
     transition: 0.3s;
-    background-color: $white;
+    background-color: @white;
 
     &.isactive {
-      border-color: $red;
-      box-shadow: inset 0 0 10px $red;
+      border-color: @red;
+      box-shadow: inset 0 0 10px @red;
     }
 
     .num-char {
-      color: $black;
+      color: @black;
     }
   }
 
   .phone-num {
     position: relative;
-    border: 1px solid $gold;
+    border: 1px solid @gold;
     font-size: 18px;
     width: 150px;
     border-radius: 10px;
@@ -177,11 +176,11 @@ $gray-ss = #ccc;
     font-size: 12px;
     line-height: 18px;
     width: 100%;
-    color: $gray-s;
+    color: @gray-s;
   }
 
   .phone-price {
-    color: $gray-s;
+    color: @gray-s;
   }
 
   .phone-text {
@@ -193,7 +192,7 @@ $gray-ss = #ccc;
     padding: 10px;
     line-height: 24px;
     text-align: center;
-    color: $gray-ss;
+    color: @gray-ss;
   }
 
   .change-button-wrap {
@@ -201,13 +200,14 @@ $gray-ss = #ccc;
   }
 
   .change-button {
-    background-color: $gold-d;
+    background-color: @gold-d;
     border-radius: 15px;
     font-size: 18px;
     border: none;
-    color: $white;
+    color: @white;
 
-    .van-icon, .van-button__text {
+    .van-icon,
+    .van-button__text {
       font-weight: bold;
     }
 
