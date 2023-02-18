@@ -6,7 +6,8 @@ test('mount FormCity component', async () => {
 
   const wrapper = mount(FormCity, {
     props: {
-      modelValue: '',
+      modelValue: [],
+      locationCity: [],
       'onUpdate:modelValue': (e: string[]) => wrapper.setProps({ modelValue: e })
     }
   })

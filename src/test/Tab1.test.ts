@@ -16,7 +16,7 @@ test('mount Tab1 component', async () => {
     },
   })
   expect(wrapper.html()).toMatchSnapshot()
-  
+
   await wrapper.get('.expenses-text').trigger('click')
 
   await nextTick()

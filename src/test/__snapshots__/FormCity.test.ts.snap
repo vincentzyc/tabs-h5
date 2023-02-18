@@ -10,14 +10,3 @@ exports[`mount FormCity component 1`] = `
   <!--teleport end-->
 </div>"
 `;
-
-exports[`mount FormCity component 2`] = `
-"<div class=\\"flex align-middle form-item\\">
-  <div class=\\"form-label\\">收货城市</div>
-  <div class=\\"form-input flex-auto flex align-middle disabled-input\\">
-    <div class=\\"wg-input placeholder\\">请选择收货城市</div>
-  </div>
-  <!--teleport start-->
-  <!--teleport end-->
-</div>"
-`;
