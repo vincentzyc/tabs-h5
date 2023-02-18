@@ -2,7 +2,7 @@
   <van-popup
     :lazy-render="false"
     position="bottom"
-    v-model:show="show"
+    v-model:show="isShow"
     :close-on-click-overlay="false"
     @closed="closedPopup"
   >
@@ -47,6 +47,11 @@ let pickerRef = $ref<PickerInstance>();
 let selectBelong = $ref([""]);
 let columns = $ref<typeof CITY>([]);
 
+let isShow = $computed({
+  get: () => props.show,
+  set: v => emits("update:show", v),
+});
+
 watch(
   () => props.locationCity,
   n => {
@@ -77,16 +82,16 @@ async function initBelong(belong: string[]) {
   }
   selectBelong = formatBelong;
   await nextTick();
-  const curProvince = pickerRef.getSelectedOptions()?.[0]?.n;
-  const curCity = pickerRef.getSelectedOptions()?.[1]?.n;
+  const curProvince = pickerRef && pickerRef.getSelectedOptions()?.[0]?.n;
+  const curCity = pickerRef && pickerRef.getSelectedOptions()?.[1]?.n;
   emits("selected", [curProvince, curCity]);
 }
 
 function confirm() {
-  emits("update:show", false);
+  isShow = false;
 }
 function cancel() {
-  emits("update:show", false);
+  isShow = false;
 }
 
 function closedPopup() {
