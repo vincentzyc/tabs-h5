@@ -2,7 +2,7 @@
   <van-popup
     :lazy-render="false"
     position="bottom"
-    v-model:show="show"
+    v-model:show="isShow"
     :close-on-click-overlay="false"
     @closed="closedPopup"
     teleport="body"
@@ -37,6 +37,11 @@ const props = withDefaults(defineProps<Props>(), {
   locationCity: () => [""],
 });
 
+let isShow = $computed({
+  get: () => props.show,
+  set: v => emits("update:show", v),
+});
+
 const emits = defineEmits<{
   (e: "update:show", bool: boolean): void;
   (e: "selected", belong: string[]): void;
@@ -60,10 +65,10 @@ function initCity() {
 initCity();
 
 function confirm(v: PickerConfirmEventParams) {
-  emits("update:show", false);
+  isShow = false;
 }
 function cancel(v: PickerCancelEventParams) {
-  emits("update:show", false);
+  isShow = false;
 }
 
 function closedPopup() {
