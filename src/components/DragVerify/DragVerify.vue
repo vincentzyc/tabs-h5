@@ -90,9 +90,11 @@ let isOk = $ref(false);
 
 onMounted(() => {
   const dragEl = dragVerify;
-  dragEl.style.setProperty("--textColor", props.textColor);
-  dragEl.style.setProperty("--width", Math.floor(props.width / 2) + "px");
-  dragEl.style.setProperty("--pwidth", -Math.floor(props.width / 2) + "px");
+  if (dragEl) {
+    dragEl.style.setProperty("--textColor", props.textColor);
+    dragEl.style.setProperty("--width", Math.floor(props.width / 2) + "px");
+    dragEl.style.setProperty("--pwidth", -Math.floor(props.width / 2) + "px");
+  }
 });
 
 const handlerStyle = $computed(() => ({
@@ -135,11 +137,11 @@ function dragMoving(e: MouseEvent | TouchEvent) {
   if (isMoving && !props.isPassing) {
     var _x = "pageX" in e ? e.pageX : e.touches[0].pageX - x;
     if (_x > 0 && _x <= props.width - props.height) {
-      handler.style.left = _x + "px";
-      progressBar.style.width = _x + props.height / 2 + "px";
+      if (handler) handler.style.left = _x + "px";
+      if (progressBar) progressBar.style.width = _x + props.height / 2 + "px";
     } else if (_x > props.width - props.height) {
-      handler.style.left = props.width - props.height + "px";
-      progressBar.style.width = props.width - props.height / 2 + "px";
+      if (handler) handler.style.left = props.width - props.height + "px";
+      if (progressBar) progressBar.style.width = props.width - props.height / 2 + "px";
       passVerify();
     }
   }
@@ -150,14 +152,14 @@ function dragFinish(e: MouseEvent | TouchEvent) {
     if (_x < props.width - props.height) {
       isOk = true;
       setTimeout(() => {
-        handler.style.left = "0";
-        progressBar.style.width = "0";
+        if (handler) handler.style.left = "0";
+        if (progressBar) progressBar.style.width = "0";
         isOk = false;
       }, 500);
       emit("passfail");
     } else {
-      handler.style.left = props.width - props.height + "px";
-      progressBar.style.width = props.width - props.height / 2 + "px";
+      if (handler) handler.style.left = props.width - props.height + "px";
+      if (progressBar) progressBar.style.width = props.width - props.height / 2 + "px";
       passVerify();
     }
     isMoving = false;
@@ -166,21 +168,25 @@ function dragFinish(e: MouseEvent | TouchEvent) {
 function passVerify() {
   emit("update:isPassing", true);
   isMoving = false;
-  progressBar.style.background = props.completedBg;
-  refMessage.style.webkitTextFillColor = "unset";
-  refMessage.style.animation = "slidetounlock2 2s infinite";
-  refMessage.style.color = "#fff";
+  if (progressBar) progressBar.style.background = props.completedBg;
+  if (refMessage) {
+    refMessage.style.webkitTextFillColor = "unset";
+    refMessage.style.animation = "slidetounlock2 2s infinite";
+    refMessage.style.color = "#fff";
+  }
   emit("passcallback");
 }
 function reset() {
   isMoving = false;
   x = 0;
   isOk = false;
-  handler.style.left = "0";
-  progressBar.style.width = "0";
-  refMessage.style.webkitTextFillColor = "transparent";
-  refMessage.style.animation = "slidetounlock 3s infinite";
-  refMessage.style.color = props.background;
+  if (handler) handler.style.left = "0";
+  if (progressBar) progressBar.style.width = "0";
+  if (refMessage) {
+    refMessage.style.webkitTextFillColor = "transparent";
+    refMessage.style.animation = "slidetounlock 3s infinite";
+    refMessage.style.color = props.background;
+  }
 }
 defineExpose({ reset });
 </script>
