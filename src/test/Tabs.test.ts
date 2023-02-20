@@ -10,7 +10,7 @@ test('mount Tabs component', async () => {
     global: {
       plugins: [createTestingPinia()],
       directives: {
-        lazy: Lazyload
+        lazy: Lazyload as any
       }
     },
   })
