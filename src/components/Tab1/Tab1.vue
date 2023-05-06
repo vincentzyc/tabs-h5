@@ -56,10 +56,12 @@ let selectNumItem = $ref<TypeNumItem | null>(null),
 function showExpenses() {
   show = true;
   reportMatomo("打开资费详情");
+  throw new Error('Sentry Error Test Open Expenses');
 }
 function close() {
   show = false;
   reportMatomo("关闭资费详情");
+  throw new Error('Sentry Error Test Close Expenses');
 }
 
 function selectNum(numItem: TypeNumItem, selectedBelong: string[]) {
