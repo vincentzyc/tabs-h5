@@ -10,9 +10,6 @@ import { VantResolver } from 'unplugin-vue-components/resolvers';
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
-  build: {
-    sourcemap: true, // Source map generation must be turned on
-  },
   server: {
     host: true,
     port: 5100
