@@ -17,7 +17,6 @@ const app = createApp(App);
 app.use(createPinia());
 
 app.config.globalProperties.$axios = Axios;
-app.config.globalProperties.$sentry = Sentry;
 
 Sentry.init({
   app,
