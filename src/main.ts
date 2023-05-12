@@ -21,7 +21,7 @@ app.config.globalProperties.$sentry = Sentry;
 
 Sentry.init({
   app,
-  dsn: 'http://0edfd37f7427420f8d98647b76e530dc@101.33.201.93:9000/3',
+  dsn: 'http://debec38030ac4e04ba6cdf72fc560458@101.33.201.93:9000/2',
   integrations: [new Sentry.Replay()],
   release: pkg.version,
   // Performance Monitoring
