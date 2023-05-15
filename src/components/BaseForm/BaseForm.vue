@@ -91,7 +91,6 @@ const submitOrder = async () => {
   var tip = checkOut(formData); //校验页面信息
   if (tip !== true) {
     showToast(tip);
-    throw new Error(tip)
     return false;
   }
   openLoading("正在提交");
