@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@pinia/testing": "^0.0.14",
+    "@sentry/types": "^7.51.2",
     "@vitejs/plugin-legacy": "^2.2.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/test-utils": "^2.2.10",
