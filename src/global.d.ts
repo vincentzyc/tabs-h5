@@ -1,8 +1,9 @@
-declare const murmur: string
+import * as Sentry from '@sentry/vue';
 
-interface Window {
-  // scroll2Bottom (): void
-  _paq: any; // matomo
-  // _czc: any;  // 友盟
+declare global {
+  const murmur: string;
+  interface Window {
+    Sentry: typeof Sentry;
+    _paq: any; // matomo
+  }
 }
-
