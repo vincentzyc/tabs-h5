@@ -10,7 +10,7 @@ import './assets/css/base.css';
 import './assets/css/main.css';
 import pkg from '../package.json';
 
-import * as Sentry from '@sentry/vue';
+// import * as Sentry from '@sentry/vue';
 
 const app = createApp(App);
 
@@ -18,10 +18,10 @@ app.use(createPinia());
 
 app.config.globalProperties.$axios = Axios;
 
-Sentry.init({
+window.Sentry.init({
   app,
   dsn: 'http://debec38030ac4e04ba6cdf72fc560458@101.33.201.93:9000/2',
-  integrations: [new Sentry.Replay()],
+  integrations: [new window.Sentry.Replay()],
   release: pkg.version,
   // Performance Monitoring
   tracesSampleRate: 1.0, // Capture 100% of the transactions, reduce in production!
