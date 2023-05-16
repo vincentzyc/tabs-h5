@@ -1,0 +1,1 @@
+import{ab as e,o as t,c as s,b as c}from"./index-fefd2a6f.js";const o={},n=c("h1",{class:"text-center",style:{"margin-top":"30px","font-size":"24px"}},"404",-1),a=[n];function r(_,i){return t(),s("div",null,a)}const d=e(o,[["render",r]]);export{d as default};
