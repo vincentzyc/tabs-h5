@@ -20,7 +20,7 @@ app.config.globalProperties.$axios = Axios;
 
 Sentry.init({
   app,
-  dsn: 'http://debec38030ac4e04ba6cdf72fc560458@101.33.201.93:9000/2',
+  dsn: 'https://1ef8fe45d8ce4fb1b7fae7071f9982fc@o1343443.ingest.sentry.io/6618212',
   integrations: [new Sentry.Replay()],
   release: pkg.version,
   // Performance Monitoring
