@@ -21,44 +21,8 @@
       }
     </style>
     <script type="text/javascript">
-      //简化压缩版 flexible.min.js ，根据实际情况决定是否使用
-      !(function (e, t) {
-        function n() {
-          var n = s.getBoundingClientRect().width;
-          (t = t || 540), n > t && (n = t);
-          var i = (100 * n) / e;
-          s.style.fontSize = i + 'px';
-        }
-        var i,
-          o = document,
-          d = window,
-          s = o.documentElement;
-        n(),
-          d.addEventListener(
-            'resize',
-            function () {
-              clearTimeout(i), (i = setTimeout(n, 300));
-            },
-            !1
-          ),
-          d.addEventListener(
-            'pageshow',
-            function (e) {
-              e.persisted && (clearTimeout(i), (i = setTimeout(n, 300)));
-            },
-            !1
-          ),
-          d.addEventListener(
-            'DOMContentLoaded',
-            function () {
-              (o.body.style.position = 'relative'),
-                (o.body.style.fontSize = '14px'),
-                (o.body.style.margin = '0 auto'),
-                (o.body.style.maxWidth = t + 'px');
-            },
-            !1
-          );
-      })(750, 640);
+      //prettier-ignore
+      !function(e,t){function n(){var n=s.getBoundingClientRect().width;n>(t=t||540)&&(n=t);var i=100*n/e;s.style.fontSize=i+"px"}var i,o=document,d=window,s=o.documentElement;n(),d.addEventListener("resize",function(){clearTimeout(i),i=setTimeout(n,300)},!1),d.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(i),i=setTimeout(n,300))},!1),d.addEventListener("DOMContentLoaded",function(){o.body.style.position="relative",o.body.style.fontSize="14px",o.body.style.margin="0 auto",o.body.style.maxWidth=t+"px"},!1)}(750,640);
     </script>
     <!-- Matomo -->
     <script type="text/javascript">
@@ -119,5 +83,35 @@
       <div style="height: 200px" class="skeleton"></div>
     </div>
     <script type="module" src="/src/main.ts"></script>
+
+    <!-- <script src="https://cdn.lipush.com/other/js/sentry-bundle.tracing.replay@7.51.2.js"></script> -->
+
+    <script
+      src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.replay.min.js"
+      integrity="sha384-YgiClEn7Yex1oOo3VtORwt20J7gCMKhYLSHAcBU8wYyZY8rIZ/YtaRxrwL5tWL0Y"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      window.Sentry.init({
+        dsn: 'https://1ef8fe45d8ce4fb1b7fae7071f9982fc@o1343443.ingest.sentry.io/6618212',
+        integrations: [new window.Sentry.Replay()],
+        release: '1.0.0',
+        // Performance Monitoring
+        tracesSampleRate: 1.0, // Capture 100% of the transactions, reduce in production!
+        // Session Replay
+        replaysSessionSampleRate: 1.0, // This sets the sample rate at 10%. You may want to change it to 100% while in development and then sample at a lower rate in production.
+        replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
+        beforeBreadcrumb(event, hint) {
+          if (event.category === 'xhr') {
+            if (event.data) {
+              event.data.request = hint?.input ? JSON.parse(hint?.input) : '';
+              event.data.response = hint?.xhr.response ? JSON.parse(hint?.xhr.response) : '';
+            }
+          }
+          return event;
+        },
+      });
+    </script>
   </body>
 </html>
