@@ -84,8 +84,6 @@
     </div>
     <script type="module" src="/src/main.ts"></script>
 
-    <!-- <script src="https://cdn.lipush.com/other/js/sentry-bundle.tracing.replay@7.51.2.js"></script> -->
-
     <script
       src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.replay.min.js"
       integrity="sha384-YgiClEn7Yex1oOo3VtORwt20J7gCMKhYLSHAcBU8wYyZY8rIZ/YtaRxrwL5tWL0Y"
@@ -95,7 +93,7 @@
     <script>
       window.Sentry.init({
         dsn: 'https://1ef8fe45d8ce4fb1b7fae7071f9982fc@o1343443.ingest.sentry.io/6618212',
-        integrations: [new window.Sentry.Replay()],
+        integrations: [new window.Sentry.Replay(), new Sentry.BrowserTracing()],
         release: '1.0.0',
         // Performance Monitoring
         tracesSampleRate: 1.0, // Capture 100% of the transactions, reduce in production!
