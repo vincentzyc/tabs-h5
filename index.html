@@ -93,7 +93,7 @@
     <script>
       window.Sentry.init({
         dsn: 'https://1ef8fe45d8ce4fb1b7fae7071f9982fc@o1343443.ingest.sentry.io/6618212',
-        integrations: [new window.Sentry.Replay(), new Sentry.BrowserTracing()],
+        integrations: [new window.Sentry.Replay(), new window.Sentry.BrowserTracing()],
         release: '1.0.0',
         // Performance Monitoring
         tracesSampleRate: 1.0, // Capture 100% of the transactions, reduce in production!
