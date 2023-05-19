@@ -109,6 +109,21 @@
           }
           return event;
         },
+        beforeSend(event) {
+          // 关联matomo用户行为事件
+          if (window.Matomo) {
+            const Tracker = window.Matomo.getAsyncTracker();
+            if (Tracker) {
+              if (Tracker.getConfigIdPageView()) {
+                event.tags.MatomoUId = Tracker.getVisitorId();
+              }
+              if (Tracker.getVisitorId()) {
+                event.tags.MatomoPVId = Tracker.getConfigIdPageView();
+              }
+            }
+          }
+          return event;
+        },
       });
     </script>
   </body>
